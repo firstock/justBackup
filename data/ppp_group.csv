@@ -1,0 +1,266 @@
+Development Status , 1 - Planning,0
+Development Status , 2 - Pre-Alpha,0
+Development Status , 3 - Alpha,0
+Development Status , 4 - Beta,0
+Development Status , 5 - Production/Stable,0
+Development Status , 6 - Mature,0
+Development Status , 7 - Inactive,0
+Environment , Console,0
+Environment , Console , Curses Framebuffer Newt svgalib
+Environment , Handhelds/PDA's,0
+Environment , MacOS X,0
+Environment , MacOS X , Aqua Carbon Cocoa
+Environment , No Input/Output (Daemon),0
+Environment , OpenStack,0
+Environment , Other Environment,0
+Environment , Plugins,0
+Environment , Web Environment,0
+Environment , Web Environment , Buffet Mozilla ToscaWidgets
+Environment , Win32 (MS Windows),0
+Environment , X11 Applications,0
+Environment , X11 Applications , Gnome GTK KDE Qt
+Framework , AsyncIO,0
+Framework , BFG,0
+Framework , Bob,0
+Framework , Bottle,0
+Framework , Buildout,0
+Framework , Buildout , Extension Recipe
+Framework , CastleCMS,0
+Framework , CastleCMS , Theme
+Framework , Chandler,0
+Framework , CherryPy,0
+Framework , CubicWeb,0
+Framework , Django,0
+Framework , Django ,1.11.111.41.51.61.71.81.92
+Framework , Flake8,0
+Framework , Flask,0
+Framework , IDLE,0
+Framework , IPython,0
+Framework , Jupyter,0
+Framework , Odoo,0
+Framework , Opps,0
+Framework , Paste,0
+Framework , Pelican,0
+Framework , Pelican , Plugins Themes
+Framework , Plone,0
+Framework , Plone ,3.23.344.14.24.355.15.2 Theme
+Framework , Pylons,0
+Framework , Pyramid,0
+Framework , Pytest,0
+Framework , Review Board,0
+Framework , Robot Framework,0
+Framework , Robot Framework , Library Tool
+Framework , Scrapy,0
+Framework , Setuptools Plugin,0
+Framework , Sphinx,0
+Framework , Sphinx , Extension Theme
+Framework , Trac,0
+Framework , Trio,0
+Framework , Tryton,0
+Framework , TurboGears,0
+Framework , TurboGears , Applications Widgets
+Framework , Twisted,0
+Framework , ZODB,0
+Framework , Zope,0
+Framework , Zope ,234
+Framework , Zope2,0
+Framework , Zope3,0
+Intended Audience , Customer Service,0
+Intended Audience , Developers,0
+Intended Audience , Education,0
+Intended Audience , End Users/Desktop,0
+Intended Audience , Financial and Insurance Industry,0
+Intended Audience , Healthcare Industry,0
+Intended Audience , Information Technology,0
+Intended Audience , Legal Industry,0
+Intended Audience , Manufacturing,0
+Intended Audience , Other Audience,0
+Intended Audience , Religion,0
+Intended Audience , Science/Research,0
+Intended Audience , System Administrators,0
+Intended Audience , Telecommunications Industry,0
+License , Aladdin Free Public License (AFPL),0
+License , CC0 1.0 Universal (CC0 1.0) Public Domain Dedication,0
+License , CeCILL-B Free Software License Agreement (CECILL-B),0
+License , CeCILL-C Free Software License Agreement (CECILL-C),0
+License , DFSG approved,0
+License , Eiffel Forum License (EFL),0
+License , Free For Educational Use,0
+License , Free For Home Use,0
+License , Free To Use But Restricted,0
+License , Free for non-commercial use,0
+License , Freely Distributable,0
+License , Freeware,0
+License , Netscape Public License (NPL),0
+License , Nokia Open Source License (NOKOS),0
+License , OSI Approved,0
+License , OSI Approved ," Academic Free License (AFL) Apache Software License Apple Public Source License Artistic License Attribution Assurance License Boost Software License 1.0 (BSL-1.0) BSD License CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1) Common Development and Distribution License 1.0 (CDDL-1.0) Common Public License Eclipse Public License 1.0 (EPL-1.0) Eiffel Forum License European Union Public Licence 1.0 (EUPL 1.0) European Union Public Licence 1.1 (EUPL 1.1) European Union Public Licence 1.2 (EUPL 1.2) GNU Affero General Public License v3 GNU Affero General Public License v3 or later (AGPLv3+) GNU Free Documentation License (FDL) GNU General Public License (GPL) GNU General Public License v2 (GPLv2) GNU General Public License v2 or later (GPLv2+) GNU General Public License v3 (GPLv3) GNU General Public License v3 or later (GPLv3+) GNU Lesser General Public License v2 (LGPLv2) GNU Lesser General Public License v2 or later (LGPLv2+) GNU Lesser General Public License v3 (LGPLv3) GNU Lesser General Public License v3 or later (LGPLv3+) GNU Library or Lesser General Public License (LGPL) IBM Public License Intel Open Source License ISC License (ISCL) Jabber Open Source License MIT License MITRE Collaborative Virtual Workspace License (CVW) Motosoto License Mozilla Public License 1.0 (MPL) Mozilla Public License 1.1 (MPL 1.1) Mozilla Public License 2.0 (MPL 2.0) Nethack General Public License Nokia Open Source License Open Group Test Suite License Python License (CNRI Python License) Python Software Foundation License Qt Public License (QPL) Ricoh Source Code Public License Sleepycat License Sun Industry Standards Source License (SISSL) Sun Public License Universal Permissive License (UPL) University of Illinois/NCSA Open Source License Vovida Software License 1.0 W3C License X.Net License zlib/libpng License Zope Public License"
+License , Other/Proprietary License,0
+License , Public Domain,0
+License , Repoze Public License,0
+Natural Language , Afrikaans,0
+Natural Language , Arabic,0
+Natural Language , Bengali,0
+Natural Language , Bosnian,0
+Natural Language , Bulgarian,0
+Natural Language , Cantonese,0
+Natural Language , Catalan,0
+Natural Language , Chinese (Simplified),0
+Natural Language , Chinese (Traditional),0
+Natural Language , Croatian,0
+Natural Language , Czech,0
+Natural Language , Danish,0
+Natural Language , Dutch,0
+Natural Language , English,0
+Natural Language , Esperanto,0
+Natural Language , Finnish,0
+Natural Language , French,0
+Natural Language , Galician,0
+Natural Language , German,0
+Natural Language , Greek,0
+Natural Language , Hebrew,0
+Natural Language , Hindi,0
+Natural Language , Hungarian,0
+Natural Language , Icelandic,0
+Natural Language , Indonesian,0
+Natural Language , Italian,0
+Natural Language , Japanese,0
+Natural Language , Javanese,0
+Natural Language , Korean,0
+Natural Language , Latin,0
+Natural Language , Latvian,0
+Natural Language , Macedonian,0
+Natural Language , Malay,0
+Natural Language , Marathi,0
+Natural Language , Norwegian,0
+Natural Language , Panjabi,0
+Natural Language , Persian,0
+Natural Language , Polish,0
+Natural Language , Portuguese,0
+Natural Language , Portuguese (Brazilian),0
+Natural Language , Romanian,0
+Natural Language , Russian,0
+Natural Language , Serbian,0
+Natural Language , Slovak,0
+Natural Language , Slovenian,0
+Natural Language , Spanish,0
+Natural Language , Swedish,0
+Natural Language , Tamil,0
+Natural Language , Telugu,0
+Natural Language , Thai,0
+Natural Language , Turkish,0
+Natural Language , Ukranian,0
+Natural Language , Urdu,0
+Natural Language , Vietnamese,0
+Operating System , Android,0
+Operating System , BeOS,0
+Operating System , MacOS,0
+Operating System , MacOS , MacOS 9 MacOS X
+Operating System , Microsoft,0
+Operating System , Microsoft , MS-DOS Windows Windows  Windows  Windows  Windows  Windows  Windows  Windows  Windows  Windows  Windows  Windows  Windows 
+Operating System , OS Independent,0
+Operating System , OS/2,0
+Operating System , Other OS,0
+Operating System , PDA Systems,0
+Operating System , POSIX,0
+Operating System , POSIX , AIX BSD BSD  BSD  BSD  BSD  GNU Hurd HP-UX IRIX Linux Other SCO SunOS/Solaris
+Operating System , PalmOS,0
+Operating System , Unix,0
+Operating System , iOS,0
+Programming Language , APL,0
+Programming Language , ASP,0
+Programming Language , Ada,0
+Programming Language , Assembly,0
+Programming Language , Awk,0
+Programming Language , Basic,0
+Programming Language , C,0
+Programming Language , C#,0
+Programming Language , C++,0
+Programming Language , Cold Fusion,0
+Programming Language , Cython,0
+Programming Language , Delphi/Kylix,0
+Programming Language , Dylan,0
+Programming Language , Eiffel,0
+Programming Language , Emacs-Lisp,0
+Programming Language , Erlang,0
+Programming Language , Euler,0
+Programming Language , Euphoria,0
+Programming Language , Forth,0
+Programming Language , Fortran,0
+Programming Language , Haskell,0
+Programming Language , Java,0
+Programming Language , JavaScript,0
+Programming Language , Lisp,0
+Programming Language , Logo,0
+Programming Language , ML,0
+Programming Language , Modula,0
+Programming Language , OCaml,0
+Programming Language , Object Pascal,0
+Programming Language , Objective C,0
+Programming Language , Other,0
+Programming Language , Other Scripting Engines,0
+Programming Language , PHP,0
+Programming Language , PL/SQL,0
+Programming Language , PROGRESS,0
+Programming Language , Pascal,0
+Programming Language , Perl,0
+Programming Language , Pike,0
+Programming Language , Pliant,0
+Programming Language , Prolog,0
+Programming Language , Python,0
+Programming Language , Python ,22.32.42.52.62.72333.13.23.33.43.53.63.73 Implementation Implementation  Implementation  Implementation  Implementation  Implementation  Implementation 
+Programming Language , REBOL,0
+Programming Language , Rexx,0
+Programming Language , Ruby,0
+Programming Language , Rust,0
+Programming Language , SQL,0
+Programming Language , Scheme,0
+Programming Language , Simula,0
+Programming Language , Smalltalk,0
+Programming Language , Tcl,0
+Programming Language , Unix Shell,0
+Programming Language , Visual Basic,0
+Programming Language , XBasic,0
+Programming Language , YACC,0
+Programming Language , Zope,0
+Topic , Adaptive Technologies,0
+Topic , Artistic Software,0
+Topic , Communications,0
+Topic , Communications , BBS Chat Chat  Chat  Chat  Chat  Conferencing Email Email  Email  Email  Email  Email  Email  Email  Email  Fax FIDO File Sharing File Sharing  File Sharing  Ham Radio Internet Phone Telephony Usenet News
+Topic , Database,0
+Topic , Database , Database Engines/Servers Front-Ends
+Topic , Desktop Environment,0
+Topic , Desktop Environment , File Managers Gnome GNUstep K Desktop Environment (KDE) K Desktop Environment (KDE)  PicoGUI PicoGUI  PicoGUI  Screen Savers Window Managers Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers  Window Managers 
+Topic , Documentation,0
+Topic , Documentation , Sphinx
+Topic , Education,0
+Topic , Education , Computer Aided Instruction (CAI) Testing
+Topic , Games/Entertainment,0
+Topic , Games/Entertainment , Arcade Board Games First Person Shooters Fortune Cookies Multi-User Dungeons (MUD) Puzzle Games Real Time Strategy Role-Playing Side-Scrolling/Arcade Games Simulation Turn Based Strategy
+Topic , Home Automation,0
+Topic , Internet,0
+Topic , Internet , File Transfer Protocol (FTP) Finger Log Analysis Name Service (DNS) Proxy Servers WAP WWW/HTTP WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  WWW/HTTP  XMPP Z39.50
+Topic , Multimedia,0
+Topic , Multimedia , Graphics Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Graphics  Sound/Audio Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Sound/Audio  Video Video  Video  Video  Video 
+Topic , Office/Business,0
+Topic , Office/Business , Financial Financial  Financial  Financial  Financial  Groupware News/Diary Office Suites Scheduling
+Topic , Other/Nonlisted Topic,0
+Topic , Printing,0
+Topic , Religion,0
+Topic , Scientific/Engineering,0
+Topic , Scientific/Engineering , Artificial Intelligence Artificial Life Astronomy Atmospheric Science Bio-Informatics Chemistry Electronic Design Automation (EDA) GIS Human Machine Interfaces Image Recognition Information Analysis Interface Engine/Protocol Translator Mathematics Medical Science Apps. Physics Visualization
+Topic , Security,0
+Topic , Security , Cryptography
+Topic , Sociology,0
+Topic , Sociology , Genealogy History
+Topic , Software Development,0
+Topic , Software Development , Assemblers Bug Tracking Build Tools Code Generators Compilers Debuggers Disassemblers Documentation Embedded Systems Internationalization Interpreters Libraries Libraries  Libraries  Libraries  Libraries  Libraries  Libraries  Libraries  Libraries  Libraries  Localization Object Brokering Object Brokering  Pre-processors Quality Assurance Testing Testing  User Interfaces Version Control Version Control  Version Control  Version Control  Version Control  Version Control  Version Control  Widget Sets
+Topic , System,0
+Topic , System , Archiving Archiving  Archiving  Archiving  Archiving  Benchmark Boot Boot  Clustering Console Fonts Distributed Computing Emulators Filesystems Hardware Hardware  Hardware  Hardware  Installation/Setup Logging Monitoring Networking Networking  Networking  Networking  Networking  Operating System Operating System Kernels Operating System Kernels  Operating System Kernels  Operating System Kernels  Power (UPS) Recovery Tools Shells Software Distribution Systems Administration Systems Administration  Systems Administration  Systems Administration  System Shells
+Topic , Terminals,0
+Topic , Terminals , Serial Telnet Terminal Emulators/X Terminals
+Topic , Text Editors,0
+Topic , Text Editors , Documentation Emacs Integrated Development Environments (IDE) Text Processing Word Processors
+Topic , Text Processing,0
+Topic , Text Processing , Filters Fonts General Indexing Linguistic Markup Markup  Markup  Markup  Markup  Markup 
+Topic , Utilities,0
