@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang= "ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>04-11</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// 클로져
+
+		// : 중첩 함수의 유효범위를 이용하여, 스코프 체이닝을 확장하는 기법
+		// 바깥함수(makeId)의 지역변수인 lastId에
+		// 반환된 함수가 접근할 수 있게 되었다
+		function makeId(){
+			var lastId= 0;
+			return function(){ return ++lastId; };
+		}
+
+		var id= makeId();
+
+		document.writeln(id());
+		document.writeln(id());
+		document.writeln(id());
+		document.writeln(id());
+		document.writeln(id());
+		document.writeln(id());
+		document.writeln('<br/>');
+		</script>
+	</body>
+</html>

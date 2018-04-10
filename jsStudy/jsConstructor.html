@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>05-01</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// Rectangle 생성자 함수
+		function Rectagle(x,y,w,h){
+
+			this.pointX= x;
+			this.pointY= y;
+			this.width= w;
+			this.height= h;
+			this.toString= fucntion(){
+				return this.pointX+' '+this.pointY+' '+this.width+' 'this.height;
+			};
+
+			// no return- 생성자함수
+		}
+
+		// new-> 빈 객체 생성-> 생성자함수 호출-> 만들어둔게 나옴
+		// rect[12]= 생성자 함수: this키워드랑 전달된 인자값으로 새로운 객체를 초기화
+		var rect1= new Rectangle(100,120,20,30);
+		var rect2= new Rectangle(250,300,30,50);
+
+		document.writeln(rect1+'<br/>');
+		document.writeln(rect2+'<br/>');
+		document.writeln('<br/>');
+		</script>
+	</body>
+</html>

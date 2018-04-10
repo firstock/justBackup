@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>05-03</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function Rectangle(x,y,w,h){
+			this.pointX= x;
+			this.pointY= y;
+			this.width= w;
+			this.height= h;
+		}	
+
+		//Rectangle에서 만든 모든 객체는 prototype에 접근 가능-> toString을 상속받아 쓰는것과 같은 이치
+		//Rectangle 객체의 prototype에 toString이란 메소드를 추가
+		Rectangle.prototype.toString= function(){
+			return this.pointX+' '+this.pointY+' '+this.width+' '+this.height;
+		};
+
+		//Rectangle 객체의 prototype에 area란 메소드를 추가
+		Rectangle.prototype.area= function(){
+			return this.width* this.height;
+		};
+
+		var rect1= new Rectangle(100,120,20,30);
+		var rect2= new Rectangle(250,300,30,50);
+
+		document.writeln(rect1+'<br/>');
+		document.writeln(rect1.area()+'<br/>');
+		document.writeln(rect2+'<br/>');
+		document.writeln(rect2.area()+'<br/>');
+		</script>
+	</body>
+</html>

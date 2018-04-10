@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>04-08</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function circle(radius){
+		var PI= 3.14;
+
+		// PI변수에 접근 가능
+		function area(r){
+			return r*r*PI;
+		}
+
+		// circle() 안에서만 호출가능
+		return area(radius);
+	}
+	document.writeln('circle(5):'+circle(5)+'<br/>');
+	document.writeln('<br/>');
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "utf-8"/>
+		<title>04-09</title>
+	</head>
+	<body>
+		<!-- scope chain이란게 달리 특별한게 아니고,
+		그냥 안쪽 함수에서 바깥 접근 할 수 있다구 ㅇㅇ -->
+		<script type="text/javascript">
+		var x= '전역 객체에 등록되있는 x프로퍼티 값';
+
+		function outer(){
+			var y= 'outer함수 호출객체에있는 y프로퍼티값';
+
+			function inner(){
+				var z= 'inner 함수 호출객체에있는 z프로퍼티값'
+				document.writeln(x+'<br/>');
+				document.writeln(y+'<br/>');
+				document.writeln(z+'<br/>');
+			}
+
+			inner();
+		}
+		</script>
+	</body>
+</html>

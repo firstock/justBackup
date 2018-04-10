@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>05-02</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function Area(){}
+
+		//방금만든 Area 빈객체에 지금 프로퍼티 추가
+		// 함수를 할당
+		Area.triangle= function(base, height){
+			return base* height/2;
+		};		
+
+		Area.rectangle= function(width, height){
+			return width* height;
+		};
+
+		Area.circle= function(radius){
+			return Math.PI* Math.pow(radius, 2);
+		};
+
+		document.writeln(Area.triangle(10,6)+'<br/>');
+		document.writeln(Area.rectangle(3,20)+'<br/>');
+		document.writeln(Area.circle(5).toFixed(2)); //소수점 2자리까지 출력
+		</script>
+	</body>
+</html>

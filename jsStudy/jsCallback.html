@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<title>04-10</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function main(){
+			
+			var array= [];
+
+			for (var i=0; i<10; i++){
+				array[i]= Math.ceil(Math.random()* 45); // 0~1사이값. 올림
+			}
+
+			// @param data, function, function
+			// 2,3째 매개변수: 콜백함수 even, odd
+			work(array, even, odd);
+		}	
+		/////// document.writeln 출력 안됨!!
+
+		// 각기 짝/홀수가 발견될때마다 호출되는 함수
+		// 당시의 배열 인덱스와 원소를 출력
+		function even(idx, num){
+			// document.writeln((idx+1)+ '번째값짝수'+ num);
+			window.alert((idx+1)+ '번째값짝수'+ num);
+		}
+		function odd(idx, num){
+			document.writeln((idx+1)+'번째값홀수'+ num);
+		}
+
+		// 함수 인자를 여럿 받고,
+		// 조건문에서 해당 조건일때만 하나씩 호출
+		// 적당한 값 같이 딸려보내고
+		function work(data, callback1, callboac2){
+			for (var i= 0; i< data.length; i++){
+				if (data[i] %2== 0){
+					callback1(i, data[i]);
+				} else{
+					callback2(i, data[i]);
+				}
+			}
+		}
+
+		main();
+		</script>
+	</body>
+</html>
