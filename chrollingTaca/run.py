@@ -7,6 +7,8 @@ from selenium.webdriver.common.by import By #find랑 혼합해서 찾으려고
 from selenium.webdriver.support.ui import WebDriverWait # 명시적대기
 from selenium.webdriver.support import expected_conditions as EC
 
+import time
+
 # 사전에 필요한 정보를 로드> DB,shell,batch 에서 인자 받아 세팅
 # 마지막에 / 넣냐마냐 일관성있게 ㄱㄱ
 main_url= "http://tour.interpark.com/"
@@ -66,3 +68,42 @@ driver.implicitly_wait(10)
 
 # 더보기 클릭> 게시판 진입
 driver.find_element_by_css_selector('.oTravelBox>.boxList>.moreBtnWrap>.moreBtn').click()
+
+## 인터파크엔 해당 안 되지만,
+# 게시판에서 많은 데이터를 가져올 때
+# 로그인 필요한 사이트(세션)라면, 주기적으로 로그인/로그아웃 반복해야
+# 특정 게시물이 사라질 경우> 팝업 발생? 없는?> 팝업 처리 검토
+
+# 게시판 끝 지점? 수집이 안 되는 시점! ~ 임계점 찾기
+# 게시판 스캔> 메타 정보 획득> loop> 일괄적으로 방문/접근 처리
+# searchModule.SetCategoryList(1, '')
+# 끝 페이지 14. 초과했을 때 뭔일 일어났나 보려고, 15까지 보자는 것
+pageEnd= 1
+for page in range(1,pageEnd+1): 
+    try:
+        # JS 구동하기
+        driver.execute_script("searchModule.SetCategoryList(%s, '')"%page)
+        #페이지 파바바박 방지. 강제로 쉬기
+        time.sleep(2) #sec
+        print('잘되고 있니',page)
+        ##### 내용 가져오기
+        # 변수 파악. 여러 사이트 비교해서 table 칼럼 '잘 정의'하기
+        # 상품명, 코멘트, 기간1, 기간2, 가격, 평점, 썸네일, 링크(상품상세정보)
+        boxItems= driver.find_elements_by_css_selector('.oTravelBox>.boxList>li')
+        # 상품 하나하나 접근
+        for li in boxItems:
+            # 이미지 링크값을 쓸건지? 아니면 다운로드해서 내 서버에 업로드 할건지?
+            # 의존적 vs 저작권 뚫뚫
+            print('썸네임',li.find_element_by_css_selector('img').get_attribute('src'))   
+            print('링크',li.find_element_by_css_selector('a').get_attribute('onclick'))   
+            print('상품명',li.find_element_by_css_selector('h5.proTit').text)
+            print('코멘트',li.find_element_by_css_selector('p.proSub').text)
+            # print('기간', (li.find_element_by_css_selector('p.proInfo').text).split(' : ')[1])
+            print('가격',li.find_element_by_css_selector('strong.proPrice').text)
+            # error! not element but elements
+            # for info in li.find_element_by_css_selector('.info-row .proInfo'):
+            for info in li.find_elements_by_css_selector('.info-row .proInfo'):
+                print(info.text)
+            print('= '*20)
+    except Exception as e1:
+        print('페이징 error',e1)
