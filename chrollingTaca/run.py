@@ -11,6 +11,8 @@ import time
 
 from Tour import TourInfo #Tour 파일의 TourInfo클래스에 담을것
 
+from bs4 import BeautifulSoup as bs
+
 # 사전에 필요한 정보를 로드> DB,shell,batch 에서 인자 받아 세팅
 # 마지막에 / 넣냐마냐 일관성있게 ㄱㄱ
 main_url= "http://tour.interpark.com/"
@@ -101,12 +103,13 @@ for page in range(1,pageEnd+1):
         for li in boxItems:
             # 이미지 링크값을 쓸건지? 아니면 다운로드해서 내 서버에 업로드 할건지?
             # 의존적 vs 저작권 뚫뚫
-            print('썸네임',li.find_element_by_css_selector('img').get_attribute('src'))   
-            print('링크',li.find_element_by_css_selector('a').get_attribute('onclick'))   
-            print('상품명',li.find_element_by_css_selector('h5.proTit').text)
-            print('코멘트',li.find_element_by_css_selector('p.proSub').text)
-            # print('기간', (li.find_element_by_css_selector('p.proInfo').text).split(' : ')[1])
-            print('가격',li.find_element_by_css_selector('.proPrice').text)
+            # print('썸네임',li.find_element_by_css_selector('img').get_attribute('src'))   
+            # print('링크',li.find_element_by_css_selector('a').get_attribute('onclick'))   
+            # print('상품명',li.find_element_by_css_selector('h5.proTit').text)
+            # print('코멘트',li.find_element_by_css_selector('p.proSub').text)
+            # ## print('기간', (li.find_element_by_css_selector('p.proInfo').text).split(' : ')[1])
+            # print('가격',li.find_element_by_css_selector('.proPrice').text)
+            
             # error! not element but elements
             # for info in li.find_element_by_css_selector('.info-row .proInfo'):
             for info in li.find_elements_by_css_selector('.info-row .proInfo'):
@@ -115,6 +118,9 @@ for page in range(1,pageEnd+1):
 
             #데이터 모음
             # 깔끔히 하려면 변수에 받아서~
+            # ('.info-row .proInfo')[1]
+            # [1]? 데이터가 없거나 부족할수도 있으니, index로 하는건 좀 위험
+            # if 등으로 보완해야
             obj= TourInfo(
                 li.find_element_by_css_selector('h5.proTit').text
                 , li.find_element_by_css_selector('.proPrice').text
@@ -127,9 +133,38 @@ for page in range(1,pageEnd+1):
         print('페이징 error',e1)
 
 # strong.proPrice 대신 .proPrice 를 써야!
-print(tour_list, len(tour_list)) #왜 11? 강사님- 12
+print(tour_list, len(tour_list)) #12
 
-
+## 예쁜 사이트- 혼자 여기까지 30분이면 충분!
 
 ##
 # 수집한 정보 개수만큼 loop> 페이지 방문> 콘텐츠 획득_상품상세정보> DB
+for tour in tour_list:
+    # tour: tourInfo
+    print('tour:',type(tour))
+    # 링크 데이터에서 실제 데이터 획득
+    # 분해
+    arr= tour.link.split(',')
+    if arr:
+        # 대체, 있는지 확인
+        link= arr[0].replace('searchModule.OnClickDetail(','')
+        # 슬라이싱. 앞에 ' 랑 뒤에 ' 제거
+        detail_url= link[1:-1] #앞에 한 놈, 뒤에 한놈 자르기
+        # 상세 페이지 이동: URL형태가 제대로 된건지 확인필요( http:~)
+        driver.get(detail_url)
+        time.sleep(2)
+
+        # pip install bs4
+        # 현재 페이지를 beautifulsoup의 DOM으로 구성
+        # 현재 페이지를 beautifulsoup로 올림
+        soup= bs(driver.page_source, 'html.parser')
+        # 현재 상세 정보 페이지에서 스케줄정보 획득
+        data= soup.select('.schedule-all')
+        print(type(data))
+
+# 종료
+driver.close() #창이 닫히는 건 아님
+driver.quit() #창 닫기
+import sys
+sys.exit() # 프로세스까지 끝내기. 자원 반납
+# driver 열 때, with ~ : 로 열면 알아서 반납?해줄것
