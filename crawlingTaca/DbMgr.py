@@ -17,12 +17,13 @@ class DBHelper:
     def db_init(self):
         self.conn = my.connect(
                         host='localhost',
-                        port= 3307,
                         user='root',
-                        password='1234',
+                        password='ch11',
                         db='pythonDB',
                         charset='utf8',
-                        cursorclass=my.cursors.DictCursor )
+                        cursorclass=my.cursors.DictCursor
+                        # ,port= 3307
+                         )
     
     def db_free(self):
         if self.conn:
@@ -54,5 +55,5 @@ class DBHelper:
 if __name__=='__main__':
     db = DBHelper()
     print(db.db_selectKeyword())
-    print(db.db_insertCrawlingData('1','2','3','4','5'))
+    # print(db.db_insertCrawlingData('1','2','3','4','5'))
     db.db_free()

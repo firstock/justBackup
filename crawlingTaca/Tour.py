@@ -7,6 +7,7 @@ class TourInfo:
     link= ''
     img=''
     contents= ''
+    
     #생성자
     #contents: 아까 TourInfo 만들때 이거 넣은적 없으니 디폴트값 써줌
     def __init__(self,title, price, area, link, img, contents= None):

@@ -12,7 +12,7 @@ import time
 from Tour import TourInfo #Tour 파일의 TourInfo클래스에 담을것
 
 from bs4 import BeautifulSoup as bs
-from DbMgr import DBHelper as Db
+from DbMgr import DBHelper as Db #만들 파일
 
 #DB
 # import pymysql as my #????
@@ -179,10 +179,10 @@ for tour in tour_list:
             tour.title
             ,tour.price
             ,tour.area
-            ,tour.contents
-            ,data[0].contents
+            ,content_final
             ,keyword
         )
+        # self, title, price, area, contents, keyword
         ## 2018-04-12 오후 6:37 
 
 # 종료
