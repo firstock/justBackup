@@ -14,6 +14,11 @@ import time
 main_url= "http://tour.interpark.com/"
 # send_keys 에 넣을 값
 keyword= '로마'
+## 구조정보
+# 상품정보를 담는 리스트. Tour 리스트
+tour_list= []
+
+
 
 # 드라이버 로드
 driver= wd.Chrome(executable_path= 'lib/chromedriver.exe')
