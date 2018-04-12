@@ -9,13 +9,15 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
+from Tour import TourInfo #Tour 파일의 TourInfo클래스에 담을것
+
 # 사전에 필요한 정보를 로드> DB,shell,batch 에서 인자 받아 세팅
 # 마지막에 / 넣냐마냐 일관성있게 ㄱㄱ
 main_url= "http://tour.interpark.com/"
 # send_keys 에 넣을 값
 keyword= '로마'
 ## 구조정보
-# 상품정보를 담는 리스트. Tour 리스트
+# 상품정보를 담는 리스트. TourInfo 리스트
 tour_list= []
 
 
@@ -104,11 +106,30 @@ for page in range(1,pageEnd+1):
             print('상품명',li.find_element_by_css_selector('h5.proTit').text)
             print('코멘트',li.find_element_by_css_selector('p.proSub').text)
             # print('기간', (li.find_element_by_css_selector('p.proInfo').text).split(' : ')[1])
-            print('가격',li.find_element_by_css_selector('strong.proPrice').text)
+            print('가격',li.find_element_by_css_selector('.proPrice').text)
             # error! not element but elements
             # for info in li.find_element_by_css_selector('.info-row .proInfo'):
             for info in li.find_elements_by_css_selector('.info-row .proInfo'):
                 print(info.text)
             print('= '*20)
+
+            #데이터 모음
+            # 깔끔히 하려면 변수에 받아서~
+            obj= TourInfo(
+                li.find_element_by_css_selector('h5.proTit').text
+                , li.find_element_by_css_selector('.proPrice').text
+                , li.find_elements_by_css_selector('.info-row .proInfo')[1].text
+                , li.find_element_by_css_selector('a').get_attribute('onclick')
+                , li.find_element_by_css_selector('img').get_attribute('src')
+            )
+            tour_list.append(obj)
     except Exception as e1:
         print('페이징 error',e1)
+
+# strong.proPrice 대신 .proPrice 를 써야!
+print(tour_list, len(tour_list)) #왜 11? 강사님- 12
+
+
+
+##
+# 수집한 정보 개수만큼 loop> 페이지 방문> 콘텐츠 획득_상품상세정보> DB

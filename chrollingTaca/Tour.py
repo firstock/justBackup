@@ -5,6 +5,7 @@ class TourInfo:
     price= ''
     area= ''
     link= ''
+    img=''
     #생성자
     def __init__(self,title, price, area, link, img):
         self.title= title
@@ -12,4 +13,3 @@ class TourInfo:
         self.area= area
         self.link= link
         self.img= img
-        
