@@ -12,8 +12,14 @@ import time
 from Tour import TourInfo #Tour 파일의 TourInfo클래스에 담을것
 
 from bs4 import BeautifulSoup as bs
+from DbMgr import DBHelper as Db
+
+#DB
+# import pymysql as my #????
 
 # 사전에 필요한 정보를 로드> DB,shell,batch 에서 인자 받아 세팅
+db= Db()
+
 # 마지막에 / 넣냐마냐 일관성있게 ㄱㄱ
 main_url= "http://tour.interpark.com/"
 # send_keys 에 넣을 값
@@ -109,7 +115,7 @@ for page in range(1,pageEnd+1):
             # print('코멘트',li.find_element_by_css_selector('p.proSub').text)
             # ## print('기간', (li.find_element_by_css_selector('p.proInfo').text).split(' : ')[1])
             # print('가격',li.find_element_by_css_selector('.proPrice').text)
-            
+
             # error! not element but elements
             # for info in li.find_element_by_css_selector('.info-row .proInfo'):
             for info in li.find_elements_by_css_selector('.info-row .proInfo'):
@@ -159,8 +165,25 @@ for tour in tour_list:
         # 현재 페이지를 beautifulsoup로 올림
         soup= bs(driver.page_source, 'html.parser')
         # 현재 상세 정보 페이지에서 스케줄정보 획득
-        data= soup.select('.schedule-all')
-        print(type(data))
+        data= soup.select('.tip-cover')
+        #select 로 뽑아서 list로 나온것
+        print(type(data), len(data), type(data[0].contents))
+
+        # DB입력> pip install pymysql # 설치 실패
+        content_final= ''
+        for c in data[0].contents:
+            content_final= str(c)
+
+        # 컨텐츠 내용에 따라 전처리> data[0].contents
+        db.db_insertCrawlingData(
+            tour.title
+            ,tour.price
+            ,tour.area
+            ,tour.contents
+            ,data[0].contents
+            ,keyword
+        )
+        ## 2018-04-12 오후 6:37 
 
 # 종료
 driver.close() #창이 닫히는 건 아님
