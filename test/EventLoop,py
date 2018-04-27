@@ -1,0 +1,21 @@
+from multiprocessing import Queue
+from functools import partial
+
+eventloop= None
+
+class EventLoop(Queue):
+    def start(self):
+        while True:
+            function= self.get()
+            function()
+    
+
+def do_hello():
+    global eventloop
+    print("Hello")
+    eventloop.put(do_world)
+
+if __name__== "__main__":
+    eventloop= EventLoop()
+    eventloop.put(do_hello)
+    eventloop.start()
