@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>로또 번호 생성</title>
+    <script type="text/javascript">
+      
+      function Lotto(numbers, balls) {
+      	this.numbers = numbers;
+      	this.balls = balls;
+      	this.luckyNumbers = [];
+      }
+      
+      Lotto.prototype.getLuckyNumbers = function() {
+      	
+      	while (true) {
+      	
+      	  var ball = Math.floor(Math.random() * this.numbers) + 1;
+      	  
+      	  if (this.luckyNumbers.indexOf(ball) == -1) {
+            this.luckyNumbers.push(ball);
+          }
+      	  
+      	  if (this.luckyNumbers.length == this.balls) 
+            break;
+      	
+      	}
+      	
+      	return this.luckyNumbers;
+      };
+      
+      var myLotto = new Lotto(45, 6);
+      document.writeln(myLotto.getLuckyNumbers());
+      
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

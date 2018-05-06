@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset= "utf-8"/>
+	<title>05-04</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 생성자
+	// 너무 느려서 실행이 안됨
+	function Lotto(numbers, balls){
+		this.numbers= numbers;
+		this.balls= balls;
+		this.luckyNumbers= [];
+	}
+
+	Lotto.prototype.getLuckyNumbers= function(){
+		while(true){
+			// 이거 이하 자체가 생각이 안 났음. ref 찾다가 2시간 지나서 그냥 따라침
+			// 임의 숫자 생성. 0~44.xxx > 정수부 +1
+			var ball= Math.floor(Math.random()* this.numbers)+ 1;
+
+			// 기존 배열에 없는거면 배열에 추가
+			if(this.luckyNumbers.indexOf(ball) == -1){
+				this.luckyNumbers.push(ball);
+			}
+
+			if(this.luckyNumbers.length === this.balls.length){ //예제는 ==인데, ===가 정확하지 않나
+				break;
+			}
+		}
+		return this.luckyNumbers;
+	};
+
+	// 위에것으로 끝인줄. 근데 더 필요하네
+	// 클래스도 아닌? 것이 객체 생성도 하고- 함수형객체-
+	// 객체로 함수호출도 하고
+	var myLotto= new Lotto(45, 6);
+	document.writeln(myLotto.getLuckyNumbers());
+</script>
+</body>
+</html>
