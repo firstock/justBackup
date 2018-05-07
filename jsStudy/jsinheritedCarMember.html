@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<title>06-02</title>
+</html>	
+</head>
+
+<body>
+	<script type="text/javascript">
+	var Car= function(f){
+		this.fuel= f;
+		this.velocity= 0;
+		this.isDriving= false;
+	};
+
+	Car.prototype= {
+		startEngine: function(){
+			this.isDriving= true;
+			this.fuel-= 5;
+			document.writeln("시동걸기 "+ this.isDriving+ ' '+ this.fuel+'<br/>');
+		},
+		accelerate: function(){
+			this.velocity+= 5;
+			this.fuel-= 5;
+			document.writeln("속도증가 "+ this.velocity+ ' '+ this.fuel+'<br/>');
+		},
+		decelerate: function(){
+			this.velocity-= 5;
+			this.fuel-= 1;
+			document.writeln("속도감소 "+ this.velocity+ ' '+ this.fuel+'<br/>');
+		},
+		stopEngine: function(){
+			this.isDriving= false;
+			this.fuel-= 5;
+			document.writeln("시동끔 "+ this.isDriving+ ' '+ this.fuel+'<br/>');
+		}
+	};
+
+	var K5= function(f,m){
+		// 객체 멤버 상속
+		// 생성자함수 호출-> prototype에 이것저것 copy 됨
+		Car.apply(this, [f]);  // 2번째 매개변수: 배열 형태로 // 또는 Car.call(this, f);
+
+		this.model= m;
+	};
+
+	K5.prototype= new Car();
+	K5.prototype.constructor= K5; // Car() 를 K5로 바꿔줌
+
+	// 생성자함수 호출 때 copy된걸 지움
+	// fuel, velocity, isDriving 정보는 prototype 쪽에 있을 필요가 없기 때문에 제거
+	delete K5.prototype.fuel;
+	delete K5.prototype.velocity;
+	delete K5.prototype.isDriving;
+
+	// velocity는 K5 함수 내에 존재
+	K5.prototype.accelerate= function(){
+		this.velocity+= 10;
+		this.fuel-= 5;
+		document.writeln("속도증가 "+ this.velocity+ ' '+ this.fuel+'<br/>');
+	};
+
+	K5.prototype.startNavigation= function(){
+		document.writeln("네비게이션 안내를 시작합니다<br/>");
+	};
+	K5.prototype.stopNavigation= function(){
+		document.writeln("네비게이션 안내를 종료합니다<br/>");
+	};
+
+	
+	var k5= new K5(1000, '2013년형');
+	
+	document.writeln('k5.fuel: '+k5.fuel+'<br/>');
+	k5.startEngine();
+	document.writeln('k5.fuel: '+k5.fuel+'<br/>');
+	k5.startNavigation();
+
+	for(var i=0; i<5; i++)
+		k5.accelerate();
+	document.writeln('k5.fuel: '+k5.fuel+'<br/>');
+	for(var i=0; i<5; i++)
+		k5.decelerate();
+	document.writeln('k5.fuel: '+k5.fuel+'<br/>');
+	k5.stopNavigation();
+	k5.stopEngine();
+	document.writeln('k5.fuel: '+k5.fuel+'<br/>');
+
+	document.writeln('<br/>');
+	</script>
+</body>

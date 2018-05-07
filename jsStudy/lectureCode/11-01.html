@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>11-01</title>
+    <style type="text/css">
+      div {
+        font-size: 12pt;
+        line-height: 16pt;
+      }
+      .header {
+        color: #000080;
+        font-size: 24pt;
+      }
+      .content {
+        color: #008000;
+      }
+      .footer {
+        color: #800080;
+        font-size: 14pt;
+      }
+      .evenitem {
+        background-color: #4596CE;
+        color: #FFFFFF;
+      }
+      .odditem {
+        background-color: #FFF5BA;
+      }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#header').addClass('header');
+        $('#content').addClass('content');
+        $('#footer').addClass('footer');
+        
+        $('#list > div:nth-child(2n)').addClass('evenitem');
+        $('#list > div:nth-child(2n+1)').addClass('odditem');
+        
+        var $elements = $('#list > div');
+        
+        $('#message').text('전체 강좌 ' + $elements.length + '건');
+        
+        var resultStr = '';
+        
+        $('<h4>강좌</h4>').appendTo('#result');
+        
+        
+        $elements.each(function(index, element) {
+		  resultStr = (index+1) + '. ' + $(element).text();
+
+          $('#result').append(resultStr);
+          $('#result').append('<br/>');
+        });
+      });
+    </script>
+  </head>
+  <body>
+	<div id="header">
+      <p>jQuery Selector</p>
+    </div>
+    <div id="content">
+      <div>
+        <p id="message">
+        </p>
+      </div>
+      <div id="list">
+        <div>안드로이드</div>
+        <div>iOS</div>
+        <div>하이브리드 앱</div>
+        <div>모바일 앱 기획</div>
+        <div>UX</div>
+      </div>
+      <div>
+        <p id="result">
+        </p>
+      </div>
+    </div>
+    <div id="footer">
+      <p>&copy; 2012 T academy</p>
+    </div>
+  </body>
+</html>

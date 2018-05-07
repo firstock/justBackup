@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>07-03</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Number
+      
+      var num1 = 255;
+      document.writeln(num1.toString(16), '<br/>'); // ff
+      document.writeln(num1.toString(8), '<br/>');  // 377
+      document.writeln('<br/>');
+      
+      var num2 = 123.45678;
+      document.writeln(num2.toExponential(2), '<br/>'); // 1.23e+2
+      document.writeln(num2.toFixed(3), '<br/>'); // 123.457
+      document.writeln(num2.toFixed(7), '<br/>'); // 123.4567800
+      document.writeln(num2.toPrecision(10), '<br/>');  // 123.4567800
+      document.writeln(num2.toPrecision(6), '<br/>'); // 123.457
+      document.writeln('<br/>');
+    </script>
+  </body>
+</html>

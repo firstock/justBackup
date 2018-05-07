@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-02</title>
+    <style type="text/css">
+      div { width:60px; height:60px; margin:5px; float:left;
+            background:green; border:10px outset; 
+            cursor:pointer; }
+      p { color:red; margin:0; clear:left; }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        var n = 0;
+        $('div').one('click', function() {
+          var index = $('div').index(this);
+          $(this).css({ 
+            borderStyle:"inset",
+            cursor:"auto"
+          });
+          $('p').text(index + '번 인덱스에 있는 div가 클릭되었습니다.(총 ' + ++n + ' 번 클릭됨)');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>녹색 상자를 클릭하세요...</p>
+  </body>
+</html>

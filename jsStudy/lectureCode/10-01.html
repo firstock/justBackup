@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>10-01</title>
+    <style type="text/css">
+      div {
+        font-size: 12pt
+      }
+      .header {
+        color: #000080;
+        font-size: 24pt;
+      }
+      .content {
+        color: #008000;
+      }
+      .footer {
+        color: #800080;
+        font-size: 14pt;
+      }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        $('#header').addClass('header');
+        $('#content').addClass('content');
+        $('#footer').addClass('footer');
+      });
+    </script>
+  </head>
+  <body>
+	<div id="header">
+      <p>jQuery</p>
+    </div>
+    <div id="content">
+      <p>
+        jQuery는 John Resig에 의해 2006년 1월 BarCamp NYC에서 발표된 
+        오픈소스 자바스크립트 프레임워크로 'Write Less, Do More' 컨셉을 
+        가진 프레임워크입니다. DOM의 쉬운 조작에서부터, 쉽고 일관된 이벤트 
+        처리, 각종 효과 기능 제공을 통한 쉬운 시각화 지원, 쉬운 Ajax 지원, 
+        쉬운 내장형 객체의 확장까지 자바스크립트의 전반을 지원하는 프레임워크
+        입니다. jQuery UI라고 불리는 UI 기능을 포함해 jQuery 기반의 플러그인 
+        라이브러리가 많습니다.
+      </p>
+    </div>
+    <div id="footer">
+      <p>&copy; 2014 T academy</p>
+    </div>
+  </body>
+</html>

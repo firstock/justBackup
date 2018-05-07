@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>07-05</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Date
+      
+      var dat = new Date(2012, 11, 10, 22, 10, 33, 500);
+      document.writeln(dat, '<br/>');  // Mon Dec 10 2012 22:10:33 GMT+0900
+      document.writeln(dat.getFullYear(), '<br/>'); // 2012
+      document.writeln(dat.getMonth(), '<br/>'); // 11
+      document.writeln(dat.getDate(), '<br/>');  // 10
+      document.writeln(dat.getDay(), '<br/>'); // 1
+      document.writeln(dat.getHours(), '<br/>');  // 22
+      document.writeln(dat.getMinutes(), '<br/>');  // 10
+      document.writeln(dat.getSeconds(), '<br/>');  // 33
+      document.writeln(dat.getMilliseconds(), '<br/>');  // 500 
+      document.writeln(dat.getTime(), '<br/>'); // 1355145033500
+      document.writeln('<br/>');
+            
+      var dat2 = new Date();
+      dat2.setFullYear(2012);
+      dat2.setMonth(11);
+      dat2.setDate(12);
+      dat2.setHours(14);
+      dat2.setMinutes(45);
+      dat2.setSeconds(30);
+      dat2.setMilliseconds(999);
+      document.writeln('<br/>');      
+      document.writeln(dat2.toLocaleString(), '<br/>'); // 2012년 12월 12일 수요일 오후 2:45:30
+      document.writeln(dat2.toGMTString(), '<br/>');  // Wed, 12 Dec 2012 05:45:30 GMT
+      document.writeln(dat2.toUTCString(), '<br/>');  // Wed, 12 Dec 2012 05:45:30 GMT
+      document.writeln(dat2.toDateString(), '<br/>'); // Wed Dec 12 2012
+      document.writeln(dat2.toTimeString(), '<br/>'); // 14:45:30 GMT+0900
+      document.writeln(dat2.toLocaleDateString(), '<br/>'); // 2012년 12월 12일 수요일
+      document.writeln(dat2.toLocaleTimeString(), '<br/>'); // 오후 2:45:30
+      document.writeln('<br/>');      
+      document.writeln(Date.parse('2012/12/08'), '<br/>');  // 1354892400000
+      document.writeln(Date.UTC(2012, 12, 30), '<br/>');  // 1359504000000
+      document.writeln('<br/>');
+    </script>
+  </body>
+</html>

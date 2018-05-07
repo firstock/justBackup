@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-03</title>
+    <style type="text/css">
+      button { margin:5px; }
+      button#theone { color:red; background:yellow; }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        
+        function aClick() {
+          $("div").show().fadeOut("slow");
+        } 
+               
+        $("#bind").click(function () {
+          $("body").on("click", "#theone", aClick)
+                   .find("#theone").text("이 버튼에 클릭 기능이 추가되었습니다...");
+        });
+
+        $("#unbind").click(function () {
+           $("body").off("click", "#theone", aClick)
+                    .find("#theone").text("이 버튼은 클릭 기능이 제거되었습니다...");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="theone">이 버튼은 클릭 기능이 제거되었습니다...</button>
+    <button id="bind">클릭 기능 추가</button>
+    <button id="unbind">클릭 기능 제거</button>
+    <div style="display:none;">버튼이 클릭되었습니다!</div>
+  </body>
+</html>

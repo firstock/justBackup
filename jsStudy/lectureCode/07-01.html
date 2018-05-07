@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>07-01</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+	  // Array
+      
+      var ary1 = ['홍길동', '이순신', '강감찬', '을지문덕', '광개토대왕'];
+      var ary2 = ['이나영', '임수정', '이영애', '김혜수'];
+      
+      document.writeln(ary1.concat(ary2), '<br/>'); // 홍길동,이순신,강감찬,을지문덕,광개토대왕,이나영,임수정,이영애,김혜수
+      document.writeln(ary1.join('／'), '<br/>');  // 홍길동／이순신／강감찬／을지문덕／광개토대왕
+      document.writeln(ary1.slice(1), '<br/>'); // 이순신,강감찬,을지문덕,광개토대왕
+      document.writeln(ary1.slice(1, 2), '<br/>');  // 이순신
+      document.writeln(ary1.splice(1, 2, '계백', '김유신'), '<br/>');  // 이순신,강감찬
+      document.writeln(ary1, '<br/>');  // 홍길동,계백,김유신,을지문덕,광개토대왕
+      document.writeln('<br/>');
+      document.writeln(ary1.pop(), '<br/>');  // 광개토대왕
+      document.writeln(ary1, '<br/>');  // 홍길동,계백,김유신,을지문덕
+      document.writeln(ary1.push('권율'), '<br/>'); // 5
+      document.writeln(ary1, '<br/>');  // 홍길동,계백,김유신,을지문덕,권율
+      document.writeln(ary1.shift(), '<br/>');  // 홍길동
+      document.writeln(ary1, '<br/>');  // 계백,김유신,을지문덕,권율
+      document.writeln(ary1.unshift('세종대왕', '장영실'), '<br/>'); // 6
+      document.writeln(ary1, '<br/>');  // 세종대왕,장영실,계백,김유신,을지문덕,권율
+      document.writeln('<br/>');
+      document.writeln(ary1.reverse(), '<br/>');  // 권율,을지문덕,김유신,계백,장영실,세종대왕
+      document.writeln(ary1, '<br/>');  //  권율,을지문덕,김유신,계백,장영실,세종대왕
+      document.writeln(ary1.sort(), '<br/>'); // 계백,권율,김유신,세종대왕,을지문덕,장영실
+      document.writeln(ary1, '<br/>');  // 계백,권율,김유신,세종대왕,을지문덕,장영실
+      document.writeln('<br/>');
+      document.writeln(ary1.length, '<br/>'); // 6
+      document.writeln(ary1.toString(), '<br/>'); // 계백,권율,김유신,세종대왕,을지문덕,장영실
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>16-02</title>
+    <link rel="stylesheet"  href="js/jquery.mobile-1.3.2.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.3.2.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="text" data-add-back-btn="true">
+      <div data-role="header" data-position="fixed">
+        <h3>텍스트 입력 필드</h3>  
+        <a href="#index" data-role="button" data-icon="home" 
+           data-transition="slide" data-direction="reverse" class="ui-btn-right">Home</a>
+      </div>
+      <div data-role="content">
+        <form name="myform">
+          <div data-role="fieldcontain">
+          <label for="name">이름</label>
+          <input type="text" id="name"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="pass">패스워드</label>
+            <input type="password" id="pass"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="email">이메일</label>
+            <input type="email" id="email"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="phone">전화</label>
+            <input type="tel" id="phone"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="age">나이</label>
+            <input type="number" id="age"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="url">URL</label>
+            <input type="url" id="url"/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="search">검색</label>
+            <input type="search" id="search" placeholder="검색어를 입력하세요."/>
+          </div>
+          <div data-role="fieldcontain">
+            <label for="content">내용</label>
+            <textarea id="content" cols="40" rows="8"></textarea>
+          </div>  
+        </form>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2014 T academy</h4>
+      </div>
+    </div>
+  </body>
+</html>

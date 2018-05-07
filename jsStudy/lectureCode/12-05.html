@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-05</title>
+    <style type="text/css">
+      div {
+        cursor: pointer;
+      }
+      div#inner {
+        background-color: #adff2f;
+      }
+      div#outer {
+        background-color: #dda0dd;
+      }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        
+        $('#outer').click(function(event) {
+          $('<div/>').append('외부 div를 클릭하였습니다.')
+                     .appendTo('#log');
+        });
+        
+        $('#inner').on('click', function(event) {
+          event.stopPropagation();
+          $('<div/>').append('내부 div를 클릭하였습니다.')
+                     .appendTo('#log');
+        });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div id="outer">
+                외부영역을 
+      <div id="inner">
+                내부 영역을 클릭해 보세요!!!
+      </div>
+                클릭해보세요!!!
+    </div>
+    <div id="log">
+    </div>
+  </body>
+</html>

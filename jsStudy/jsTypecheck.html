@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lange="">
+<head>
+	<meta charset="utf-8">
+	<title>06-03</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function checkType(obj){
+		if(null== obj)
+			return 'null';
+
+		// typeof로 type을 문자열로 얻어옴
+		var type= typeof obj;
+		if('object'!= type)
+			return type;
+
+		var str= Object.prototype.toString.call(obj);
+
+		// 생성자 이름 추출
+		var constructor= str.substring(8, str.length- 1);
+		// Object 일땐, constructor 프로퍼티까지 조사
+		if('Object'!= constructor)
+			return constructor;
+
+		// 실제 Object 타입일 경우, constructor 값을 반환
+		if(Object== obj.constructor)
+			return constructor;
+
+		if('constructorname' in obj.constructor.prototype)
+			return obj.constructor.prototype.constructorname;
+
+		return 'don\'t know object type';
+	}	
+
+	var Parent= function(){};
+	Parent.prototype.constructorname= 'Parent';
+
+	var Child= function(){};
+
+	Child.prototype= new Parent();
+	Child.prototype.constructor= Child;
+	Child.prototype.constructorname= 'Child';
+
+	
+	var child= new Child();
+	// type check 1,2,3
+	document.writeln('typeof Parent '+typeof Parent+ '<br/>');
+	document.writeln('typeof Child '+typeof Child+ '<br/>');
+	document.writeln('typeof child '+typeof child+ '<br/>');
+
+	// 이하- 출력 안나옴
+	document.writeln('child instanceof '+child instanceof Object + '<br/>');
+	document.writeln('child instanceof '+child instanceof Parent + '<br/>');
+	document.writeln('child instanceof '+child instanceof Child + '<br/>');
+	
+	document.writeln('child.constructor '+(child.constructor=== Object) + '<br/>');
+	document.writeln('child.constructor '+(child.constructor=== Parent) + '<br/>');
+	document.writeln('child.constructor '+(child.constructor=== Child)  + '<br/>');
+	document.writeln('<br/>');
+
+	document.writeln(checkType(child)+'<br/>');
+	</script>
+</body>
+</html>

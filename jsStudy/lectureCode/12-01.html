@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-01</title>
+    <style type="text/css">
+      .test { color: #000; padding: .5em; border: 1px solid #444; }
+      .active { color: #900; font-weight: bold; }
+      .inside { background-color: aqua; }
+    </style>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        $("div.test").on({
+          click: function(){
+            $(this).toggleClass("active");
+          },
+          mouseenter: function(){
+            $(this).addClass("inside");
+            $(this).text("mouseenter");
+          },
+          mouseleave: function(){
+            $(this).removeClass("inside");
+            $(this).text("mouseleave");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+	<div class="test">ready</div>
+  </body>
+</html>

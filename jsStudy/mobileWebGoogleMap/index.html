@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Road Map</title>
+    <link rel="stylesheet"  href="js/jquery.mobile-1.3.2.css" />
+    <style>
+      div#map {
+        width: 100%;
+        height: 400px;
+        border: 4px solid white;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; 
+      }
+    </style>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=인증키를입력하세요&sensor=false">
+    </script>
+    <script type="text/javascript">
+      $(document).on('pageinit', function() {
+        
+        $('div#location').on('pageshow', function () {
+          
+          var myPosition = new google.maps.LatLng(37.466198, 126.960239);
+          
+          var mapOptions = {
+            center: myPosition,
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+        
+          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          
+          var marker = new google.maps.Marker({
+            position : myPosition,
+            map : map
+          });
+
+        });
+        
+      });
+    </script>
+    <script src="js/jquery.mobile-1.3.2.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="index" data-theme="b">
+      <div data-role="header" data-theme="b" data-position="fixed">
+        <h3>T academy</h3>  
+      </div>
+      <div data-role="content">
+        <ul data-role="listview" data-theme="c" data-inset="true">
+          <li data-role="list-divider">menu</li>
+          <li><a href="#about" data-transition="slide"><h3>T academy 안내</h3></a></li>
+          <li><a href="#location" data-transition="slide"><h3>위치안내</h3></a></li>
+        </ul>  
+      </div>
+      <div data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy; 2014 T academy</h4>
+      </div>
+    </div>
+    <div data-role="page" id="about" data-theme="c" data-add-back-btn="true" >
+      <div data-role="header" data-theme="b" data-position="fixed">
+        <h3>T academy</h3>
+      </div>
+      <div data-role="content">
+        <h3>T academy 안내</h3>
+        <p>T academy 안내 내용입니다.</p>
+      </div>
+      <div data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy; 2014 T academy</h4>
+      </div>
+    </div>
+    <div data-role="page" id="location" data-theme="c">
+      <div data-role="header" data-theme="b" data-position="fixed">
+        <a data-rel="back">BACK</a>
+        <h3>T academy</h3>
+      </div>
+      <div data-role="content">
+        <h3>위치안내</h3>
+        <div id="map"></div>
+      </div>
+      <div data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy; 2014 T academy</h4>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>07-02</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // String
+      
+      var str1 = 'better tomorrow';
+      document.writeln(str1.indexOf('t'), '<br/>'); // 2
+      document.writeln(str1.lastIndexOf('t'), '<br/>'); // 7
+      document.writeln(str1.indexOf('t', 3), '<br/>'); // 3
+      document.writeln(str1.lastIndexOf('o', 3), '<br/>');  // -1
+      document.writeln(str1.indexOf('mo'), '<br/>');  // 9
+      document.writeln('<br/>');
+      
+      var str2 = 'JavaScript';
+      document.writeln(str2.charAt(4), '<br/>');  // s
+      document.writeln(str2.slice(5, 8), '<br/>');  // cri
+      document.writeln(str2.substring(5, 8), '<br/>');  // cri
+      document.writeln(str2.substr(5, 3), '<br/>'); // cri
+      document.writeln(str2.split('S'), '<br/>'); // Java,cript
+      document.writeln('<br/>');
+      
+      document.writeln(str2.concat('프로젝트'), '<br/>'); // JavaScript프로젝트
+      document.writeln(str2.length, '<br/>'); // 10
+      document.writeln('<br/>');
+    </script>
+  </body>
+</html>

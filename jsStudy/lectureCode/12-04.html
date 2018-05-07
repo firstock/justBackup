@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>12-04</title>
+	<script src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+    	  $(document).ready(function() {
+        
+        $('a').click(function(event) {
+          event.preventDefault();
+          $('<div/>').append('&lta&gt; 태그의 기본 ' + event.type + ' 액션이 취소되어 있습니다.')
+                     .appendTo('#log');
+        });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <a href="http://jquery.com">jquery.com</a>
+    <div id="log"></div>
+  </body>
+</html>
