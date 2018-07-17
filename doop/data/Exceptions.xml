@@ -1,0 +1,111 @@
+﻿<Body xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2001/06/soap-envelope">
+    <GetExceptionsResponse xmlns="urn:semi-org:xsd.E125.V0710.esd">
+        <Exception exceptionId="DeviceNotResponding" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="OverTemperature" severity="Error" exceptionName="Over Temperature" description="Temperature above maximum" />
+        <Exception exceptionId="LowPhotoLevel" severity="Warning" exceptionName="Low Photo Level" description="Photo resist level low" />
+        <Exception exceptionId="VacuumLoss" severity="Error" exceptionName="Vacuum Loss" description="Vacuum lost" />
+        <Exception exceptionId="PressureLoss" severity="Error" exceptionName="Pressure Loss" description="Pressure failure" />
+        <Exception exceptionId="MemoryLow" severity="Warning" exceptionName="Memory Low" description="Control system memory is low" />
+        <Exception exceptionId="ProgramExecutionTimeout" severity="Fatal" exceptionName="Program Execution Timeout" description="Program execution has timed out" />
+        <Exception exceptionId="InitHardwareError" severity="Error" exceptionName="Initialization Hardware Error" description="Initialization identified hardware error">
+            <ExceptionParameter>
+                <parameterName>HardwareErrorDetail</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="RecipeStorageSpaceLow" severity="Error" exceptionName="Recipe Storage Space Low" description="Recipe storage area low disk space" />
+        <Exception exceptionId="SECSMsgTimeoutFrequency" severity="Warning" exceptionName="SECS Message Timeout Frequency" description="SECS message timeout frequency exceeded (too many timeouts)" />
+        <Exception exceptionId="WaferSensorMalfunction" severity="Error" exceptionName="Wafer Sensor Malfunction" description="MaterialLocation wafer sensor not responding or responding intermiittently" />
+        <Exception exceptionId="WaferLostDuringProcess" severity="Error" exceptionName="Wafer Lost During Process" description="Wafer unexpectedly disappeared from MaterialLocation during processing" />
+        <Exception exceptionId="InitializationFailed" severity="Error" exceptionName="Initialization Failed" description="Equipment component failed to initialize properly" />
+        <Exception exceptionId="SpinSpeedOutOfLimits" severity="Error" exceptionName="Spin Speed Out Of Limits" description="Spin speed beyond normal limits" />
+        <Exception exceptionId="AccessModeViolation" severity="Warning" exceptionName="Access Mode Violation" description="A carrier was manually placed on the load port while in Auto, or the AMHS placed a carrier while in Manual">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierVerificationFailure" severity="Error" exceptionName="Carrier Verification Failure" description="Equipment verification of Carrier Id failed">
+            <ExceptionParameter>
+                <parameterName>CarrierID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="SlotMapReadFailed" severity="Error" exceptionName="Slot Map Read Failed" description="Failed to read slot map">
+            <ExceptionParameter>
+                <parameterName>CarrierID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="SlotMapVerificationFailed" severity="Error" exceptionName="Slot Map Verification Failed" description="Equipment verification of Carrier Slot Map failed">
+            <ExceptionParameter>
+                <parameterName>CarrierID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="DuplicateCarrierID" severity="Error" exceptionName="Duplicate Carrier ID" description="A duplicate Carrier ID exists on the equipment">
+            <ExceptionParameter>
+                <parameterName>CarrierID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierOpenCloseFailure" severity="Error" exceptionName="Carrier Open Close Failure" description="Failed to open or close the Load Port / Carrier door">
+            <ExceptionParameter>
+                <parameterName>LocationID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="PIOFailure" severity="Error" exceptionName="PIO Failure" description="I/O signal error occurred">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="AttemptToUseOutOfServiceLoadPort" severity="Error" exceptionName="Attempt To Use Out Of Service Load Port" description="An attempt was made to use a load port that is in the OutOfService state">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierPresenceError" severity="Error" exceptionName="Carrier Presence Error" description="Carrier sensor indicates a carrier is present when none should be">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierPlacementError" severity="Error" exceptionName="Carrier Placement Error" description="Carrier placement on port is incorrect">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierDockUndockFailure" severity="Error" exceptionName="Carrier Dock / Undock Failure" description="Failed to dock or undock carrier">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="CarrierRemovalError" severity="Error" exceptionName="Carrier Removal Error" description="Carrier was removed in an invalid state">
+            <ExceptionParameter>
+                <parameterName>PortID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="SubstrateDestinationNotAccessible" severity="Error" exceptionName="Substrate Destination Not Accessible" description="The substrate destination in the MtrlOutSpec is either not accessible or is already occupied">
+            <ExceptionParameter>
+                <parameterName>CtrlJobID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="SubstrateDestinationUnknown" severity="Error" exceptionName="Substrate Destination Unknown" description="The substrate destination is not specified in the MtrlOutSpec">
+            <ExceptionParameter>
+                <parameterName>CtrlJobID</parameterName>
+            </ExceptionParameter>
+        </Exception>
+        <Exception exceptionId="DeviceNotResponding_0" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="DeviceNotResponding_1" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="DeviceNotResponding_2" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="DeviceNotResponding_3" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="DeviceNotResponding_4" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="DeviceNotResponding_5" severity="Error" exceptionName="Device Not Responding" description="Communication with device lost" />
+        <Exception exceptionId="WaferSensorMalfunction_0" severity="Error" exceptionName="Wafer Sensor Malfunction" description="MaterialLocation wafer sensor not responding or responding intermiittently" />
+        <Exception exceptionId="WaferLostDuringProcess_0" severity="Error" exceptionName="Wafer Lost During Process" description="Wafer unexpectedly disappeared from MaterialLocation during processing" />
+        <Exception exceptionId="InitializationFailed_0" severity="Error" exceptionName="Initialization Failed" description="Equipment component failed to initialize properly" />
+        <Exception exceptionId="VacuumLoss_0" severity="Error" exceptionName="Vacuum Loss" description="Vacuum lost" />
+        <Exception exceptionId="PIOFailure_0" severity="Error" exceptionName="PIO Failure" description="I/O signal error occurred" />
+        <Exception exceptionId="AttemptToUseOutOfServiceLoadPort_0" severity="Error" exceptionName="Attempt To Use Out Of Service Load Port" description="An attempt was made to use a load port that is in the OutOfService state" />
+        <Exception exceptionId="CarrierPresenceError_0" severity="Error" exceptionName="Carrier Presence Error" description="Carrier sensor indicates a carrier is present when none should be" />
+        <Exception exceptionId="CarrierPlacementError_0" severity="Error" exceptionName="Carrier Placement Error" description="Carrier placement on port is incorrect" />
+        <Exception exceptionId="CarrierDockUndockFailure_0" severity="Error" exceptionName="Carrier Dock / Undock Failure" description="Failed to dock or undock carrier" />
+        <Exception exceptionId="CarrierRemovalError_0" severity="Error" exceptionName="Carrier Removal Error" description="Carrier was removed in an invalid state" />
+        <Exception exceptionId="AccessModeViolation_0" severity="Warning" exceptionName="Access Mode Violation" description="A carrier was manually placed on the load port while in Auto, or the AMHS placed a carrier while in Manual" />
+        <Exception exceptionId="CarrierOpenCloseFailure_0" severity="Error" exceptionName="Carrier Open Close Failure" description="Failed to open or close the Load Port / Carrier door" />
+        <Exception exceptionId="VacuumLoss_1" severity="Error" exceptionName="Vacuum Loss" description="Vacuum lost" />
+    </GetExceptionsResponse>
+</Body>

@@ -1,0 +1,624 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>1</No>
+    <Progress>true</Progress>
+    <Name>Establish Session</Name>
+    <Description>Establish a session by sending the EstablishSession() command from the B client defined in Section A, Step 6.</Description>
+    <ExpectedResults>A session is made with the equipment.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>2</No>
+    <Progress>true</Progress>
+    <Name>Define Plan "Exception"</Name>
+    <Description>
+      Send the DefinePlan() command to the equipment to define an exception data collection plan named "Exception.”
+      The plan should include the following characteristics.
+       Contains one exception request
+       Exception request should contain at least
+      two exceptions that are from different sources (e.g., process chamber and wafer handler).
+    </Description>
+    <ExpectedResults>A successful reply for defining a DCP named Exception</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>3</No>
+    <Progress>true</Progress>
+    <Name>Define Plan "Event"</Name>
+    <Description>
+      Send the DefinePlan() command to the equipment to define an event data collection plan named "Event.” The plan should include the following
+      characteristics.
+       Contains one event request
+       Event request contains one standardized
+      event: PR Job State Change (E40)
+       This event is configured to report an associated parameter with the event, such as PRJobID, CarrierID, and one floatingpoint value from each process chamber.
+       Single events are recommended to be included in the DCP.
+       Other features such as conditional event triggers should be tested. The triggers are equipment–specific, and special testing conditions must be set up and met. This procedure does not address such functionality verification.
+      Make this plan persistent.
+    </Description>
+    <ExpectedResults>A successful reply for defining a DCP named Event.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>4</No>
+    <Progress>true</Progress>
+    <Name>Define Plan "Trace"</Name>
+    <Description>
+      Send the DefinePlan() command to the equipment to define a trace data collection plan named "Trace.” The plan should include the following
+      characteristics:
+       Contains one trace request
+       Group size =1, Interval in seconds= 2, isCyclical= TRUE, IsPersistent = FALSE
+       Trace request is event initiated using E90 events. Start event is the transition to Occupied for the selected process chamber. Stop event is the transition to unoccupied for the selected process chamber.
+       Trace request contains one floating point
+      value from the selected process chamber (if available).
+    </Description>
+    <ExpectedResults>A successful reply for defining a DCP named Trace.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>5</No>
+    <Progress>true</Progress>
+    <Name>Define Plan "Combination"</Name>
+    <Description>Send the DefinePlan() command to the equipment to define a combination data collection plan named "Combination.” This DCP should contain the exception, event, and trace requests defined in steps 2, 3, and 4 above. This plan must be persistent and the intervalInMinutes attribute should be 1 minute.</Description>
+    <ExpectedResults>
+      A successful reply for defining
+      a DCP named Combination.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>6</No>
+    <Progress>true</Progress>
+    <Name>Get Defined Plans Identifiers</Name>
+    <Description>Get the Defined Plan Identifiers by issuing the GetDefinedPlanIDs() command, and verify that the plans created in the previous four steps are in the list returned.</Description>
+    <ExpectedResults>
+      A reply of a list of plans defined in
+      the equipment that includes the
+      ones created in previous steps
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>7</No>
+    <Progress>true</Progress>
+    <Name>Get Plan Definition</Name>
+    <Description>
+      Get a Plan Definition by using the identifier of one of the created DCPs. Request the definition of the plan identifier using the GetPlanDefinition()
+      command.
+    </Description>
+    <ExpectedResults>
+      A reply that shows the definition of the
+      DCP requested, as defined in the previous “define plan” command
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>8</No>
+    <Progress>true</Progress>
+    <Name>Get Parameter Value</Name>
+    <Description>Using the definition from the previous step, select a parameter value to query and send the GetParameterValue() command to the equipment.</Description>
+    <ExpectedResults>A reply with the requested value</ExpectedResults>
+    <CheckResult>false</CheckResult>
+    <ErrorMessage>No defined parameters
+</ErrorMessage>
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>9</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get a list of the Active Plans by sending the GetActivePlanIDs() command to the equipment.</Description>
+    <ExpectedResults>
+      A reply must be received that shows the active plans. That list should not
+      include the DCPs that were just created.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>10</No>
+    <Progress>true</Progress>
+    <Name>Activate DCPs</Name>
+    <Description>Activate the defined DCPs by sending the ActivatePlan() command to the equipment using each identifier from the 4 defined DCPs.</Description>
+    <ExpectedResults>A reply for each activated plan</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>11</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get Active Plans by sending the GetActivePlanIDs() command to the equipment.</Description>
+    <ExpectedResults>
+      A reply must be received that shows the active plans, including the plan just
+      activated.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>12</No>
+    <Progress>true</Progress>
+    <Name>Deactivate Plan</Name>
+    <Description>
+      Send the DeactivatePlan() command to the equipment to deactivate two of the DCPs.
+      Leave the persistent DCP activated.
+    </Description>
+    <ExpectedResults>One ack for each deactivated plan</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>13</No>
+    <Progress>true</Progress>
+    <Name>Delete Plan</Name>
+    <Description>With the activated plan identifier, send the DeletePlan() command to the equipment. Verify that the persistent DCP has not been deleted because it is still active. Annotate in the Comments column to the right.</Description>
+    <ExpectedResults>
+      A reply that states that the DeletePlan
+      request is not allowed.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>14</No>
+    <Progress>true</Progress>
+    <Name>Deactivate Plan</Name>
+    <Description>To deactivate the activated plan, send the DeactivatePlan() command to the equipment for the activated plan.</Description>
+    <ExpectedResults>
+      A reply showing the deactivation
+      was successful
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>15</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get a list of the Active Plans by sending the GetActivePlanIDs() command to the equipment to check for the deactivated plan.</Description>
+    <ExpectedResults>
+      A reply must be received that does not show the deactivated
+      plan
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>D. Defining Data Collection Plans - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>D</CategoryKey>
+    <No>16</No>
+    <Progress>true</Progress>
+    <Name>Close Sessions</Name>
+    <Description>Close the sessions, Save the logs.</Description>
+    <ExpectedResults>Session closed</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>1</No>
+    <Progress>true</Progress>
+    <Name>Establish Session</Name>
+    <Description>Establish a session by sending the EstablishSession() command from the A client defined in Section A, Step 6.</Description>
+    <ExpectedResults>A session is made with the equipment.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>2</No>
+    <Progress>true</Progress>
+    <Name>Get Defined Plan Identifiers</Name>
+    <Description>
+      Note: If built-in plans are available, they must be used for this section.
+      Setup: If there are no defined plans available, a plan must be defined.
+      Get the Defined Plan Identifiers by sending the GetDefinedPlanIDs() command to the equipment.
+    </Description>
+    <ExpectedResults>
+      A reply in a form of a list of the
+      data collection plans that are defined on the equipment.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>3</No>
+    <Progress>true</Progress>
+    <Name>Get Plan Definition</Name>
+    <Description>Select one of the DCPs from the list of defined plan IDs. Send the GetPlanDefinition() command for the selected Plan ID.</Description>
+    <ExpectedResults>
+      A reply from the equipment with a
+      plan definition. (See SEMI E134
+      for DCP format.)
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>4</No>
+    <Progress>true</Progress>
+    <Name>Activate Builtin DCP</Name>
+    <Description>Activate a built-in (or other if built-in is not available) DCP by sending the ActivatePlan() command to the equipment using the identifier for a built-in DCP:</Description>
+    <ExpectedResults>
+      A reply showing the activated
+      plan.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>5</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get a list of the active plans by sending the GetActivePlanIDs() command to the equipment:</Description>
+    <ExpectedResults>
+      A reply must be received that
+      shows the active plan(s). The
+      reply should include the requested DCP
+      that was activated.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>6</No>
+    <Progress>true</Progress>
+    <Name>Get Current Performance Status</Name>
+    <Description>Setup: Ensure that the plan is active. Get the current performance status by sending the GetCurrentPerformanceStatus() command to the equipment. Annotate the received performance values in the Comments section to the right.</Description>
+    <ExpectedResults>
+      The sent value is not standardized,
+      so it could be a CPU percentage,
+      a byte per second, or any other parameter the supplier chooses.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>7</No>
+    <Progress>true</Progress>
+    <Name>Delete Plan</Name>
+    <Description>
+      Setup: Ensure that the plan is active.
+      Delete the plan by sending the DeletePlan() command to the equipment.
+      Verify that the DCP is still receiving new data and annotate in the Comments section to the right.
+    </Description>
+    <ExpectedResults>
+      A reject reply to the command
+      and new data from the plan
+      continues to be received.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>8</No>
+    <Progress>true</Progress>
+    <Name>Deactivate Plan</Name>
+    <Description>Using the activated plan identifier from previous step, send the DeactivatePlan() command to the equipment.</Description>
+    <ExpectedResults>Successful reply.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>9</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get a list of the active plans by sending the GetActivePlanIDs() command to the equipment.</Description>
+    <ExpectedResults>
+      A reply that shows the active
+      plans from the equipment, not
+      including the plan that was deactivated in the previous step.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>10</No>
+    <Progress>true</Progress>
+    <Name>Delete Plan</Name>
+    <Description>
+      Attempt to delete a built-in DCP using the DeletePlan() command.
+      Verify that the DCP cannot be deleted because it is built-in – annotate in the comments section to the right.
+      Note: This command will succeed if the DCP is not built-in.
+    </Description>
+    <ExpectedResults>A reply that rejects the request to delete the built-in DCP.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>11</No>
+    <Progress>true</Progress>
+    <Name>Get Defined Plans</Name>
+    <Description>
+      Send the GetDefinedPlanIDs() command to the equipment.
+      Verify that the “DeletePlan” command did not delete built-in DCPs – annotate in the comments section to the right.
+      Note: The DCP will not be in the list if it was not built-in.
+    </Description>
+    <ExpectedResults>
+      A reply in a form of a list with the
+      defined data collection plans, including the built-in plan that was attempted to
+      be deleted in the previous step.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>E. DCP Management - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>E</CategoryKey>
+    <No>12</No>
+    <Progress>true</Progress>
+    <Name>Close Session</Name>
+    <Description>Close the client session. Save the log file for the client</Description>
+    <ExpectedResults>Session closed</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>1</No>
+    <Progress>true</Progress>
+    <Name>Establish Session</Name>
+    <Description>Establish a session by sending the EstablishSession() command from the A client defined in Section A, Step 6.</Description>
+    <ExpectedResults>A session is made with the equipment.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>2</No>
+    <Progress>true</Progress>
+    <Name>Get Defined Plans Identifiers</Name>
+    <Description>Get the Defined Plan Identifiers by issuing the GetDefinedPlanIDs() command.</Description>
+    <ExpectedResults>A reply of a list of plans defined on the equipment</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>3</No>
+    <Progress>true</Progress>
+    <Name>Activate DCPs</Name>
+    <Description>Activate the "Event" DCP defined in section D, Step 4 by sending the ActivatePlan() command to the equipment using the identifier from the DCP.</Description>
+    <ExpectedResults>A reply for each activated plan</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>4</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get Active Plans by sending the GetActivePlanIDs() command to the equipment.</Description>
+    <ExpectedResults>
+      A reply must be received that shows the active plans, including the plan just
+      activated
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>5</No>
+    <Progress>true</Progress>
+    <Name>Equipment Shutdown</Name>
+    <Description>Perform an orderly shutdown of the equipment.</Description>
+    <ExpectedResults>
+      The client should get a
+      SessionFrozen() and a DCPHibernation()
+      notification before the equipment shuts
+      down.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>6</No>
+    <Progress>true</Progress>
+    <Name>Restart Equipment</Name>
+    <Description>Restart the equipment.</Description>
+    <ExpectedResults>
+      A session ping is received from
+      the A client.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>7</No>
+    <Progress>true</Progress>
+    <Name>
+      Establish Single Session
+      (Admin session)
+    </Name>
+    <Description>Establish an admin session by sending the EstablishSession() command.</Description>
+    <ExpectedResults>
+      An admin session is established with
+      the equipment
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>8</No>
+    <Progress>true</Progress>
+    <Name>
+      Get Active Sessions
+      (Admin session)
+    </Name>
+    <Description>Verify that the A session persisted by checking for active sessions using the GetActiveSessions() command from the admin client.</Description>
+    <ExpectedResults>A list showing the persistent non-admin sessions on the equipment.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>9</No>
+    <Progress>true</Progress>
+    <Name>Get Active Plans</Name>
+    <Description>Get Active Plans by sending the GetActivePlanIDs() command to the equipment. Verify that the persistent plans persisted and the non-persistent plans terminated.</Description>
+    <ExpectedResults>
+      A reply must be received that shows the active plans. The persistent
+      plan that was active before shutdown is now active again.
+    </ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>10</No>
+    <Progress>true</Progress>
+    <Name>Deactivate Plan</Name>
+    <Description>To deactivate the activated plan, send the DeactivatePlan() command to the equipment for the activated plan.</Description>
+    <ExpectedResults>A reply showing the deactivation was successful</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>F. Persistence Check - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>F</CategoryKey>
+    <No>11</No>
+    <Progress>true</Progress>
+    <Name>Close Sessions</Name>
+    <Description>Close the sessions. Save log from both clients.</Description>
+    <ExpectedResults>Sessions closed</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>G. Multi-Client Evaluation - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>G</CategoryKey>
+    <No>1</No>
+    <Progress>true</Progress>
+    <Name>Multiple client, single DCP</Name>
+    <Description>
+      Create 3 simultaneous sessions using the EstablishSession() command:
+      Use the previously defined B, ISMI-C, and ISMI-D clients.
+    </Description>
+    <ExpectedResults>3 sessions are successfully activated.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>G. Multi-Client Evaluation - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>G</CategoryKey>
+    <No>2</No>
+    <Progress>true</Progress>
+    <Description>
+      From each session, activate the DCP named 1-G1-100ms (specified in Section 8.2.3.1.1). This should have been defined by the supplier in advance of the evaluation execution.
+      Verify that 3 clients can activate a single DCP and all receive NewData reports.
+    </Description>
+    <ExpectedResults>All clients can activate a single DCP. The equipment reports data to each session independently.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>G. Multi-Client Evaluation - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>G</CategoryKey>
+    <No>3</No>
+    <Progress>true</Progress>
+    <Name>Deactivation of one DCP while others continue to run</Name>
+    <Description>Using the B client, deactivate the DCP by sending the DeactivatePlan() command. Note that ISMI-B is not the author of the DCP and does not have the ManageAnyDCP privilege</Description>
+    <ExpectedResults>Successful deactivation of one client while other DCPs continue reporting</ExpectedResults>
+    <CheckResult>false</CheckResult>
+    <ErrorMessage>Error
+</ErrorMessage>
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>G. Multi-Client Evaluation - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>G</CategoryKey>
+    <No>4</No>
+    <Progress>true</Progress>
+    <Name>Owner Termination of a DCP</Name>
+    <Description>Using the D client, deactivate the DCP by sending the DeactivatePlan() command with terminate = "true.” Note that ISMI-D has the ManageAnyDCP privilege and is not the author of the DCP. As the DCP terminates, verify that the ISMI-C client also stops receiving data – annotate in the Comments section to the right.</Description>
+    <ExpectedResults>
+      The plan is successfully deactivated. All
+      clients that had activated that DCP no longer receive data. C receives
+      a notification that the plan is being
+      terminated.
+    </ExpectedResults>
+    <CheckResult>false</CheckResult>
+    <ErrorMessage>ManageOnlyAuthoredDCPs 권한으로 활성화된 Plan에서 데이터를 수신 합니다</ErrorMessage>
+  </EvaluationDataTable>
+  <EvaluationDataTable>
+    <Category>G. Multi-Client Evaluation - This section may be done using a secure session with SSL or a plain HTTP session.</Category>
+    <CategoryKey>G</CategoryKey>
+    <No>5</No>
+    <Progress>true</Progress>
+    <Name>Close Sessions</Name>
+    <Description>Close the client sessions. Save the log for each session.</Description>
+    <ExpectedResults>Sessions close.</ExpectedResults>
+    <CheckResult>true</CheckResult>
+    <ErrorMessage />
+  </EvaluationDataTable>
+</DocumentElement>

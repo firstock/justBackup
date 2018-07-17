@@ -1,0 +1,48 @@
+﻿exceptionId,severity,exceptionName,descriptio
+DeviceNotResponding,Error,Device Not Responding,Communication with device lost
+OverTemperature,Error,Over Temperature,Temperature above maximum
+LowPhotoLevel,Warning,Low Photo Level,Photo resist level low
+VacuumLoss,Error,Vacuum Loss,Vacuum lost
+PressureLoss,Error,Pressure Loss,Pressure failure
+MemoryLow,Warning,Memory Low,Control system memory is low
+ProgramExecutionTimeout,Fatal,Program Execution Timeout,Program execution has timed out
+InitHardwareError,Error,Initialization Hardware Error,Initialization identified hardware error
+RecipeStorageSpaceLow,Error,Recipe Storage Space Low,Recipe storage area low disk space
+SECSMsgTimeoutFrequency,Warning,SECS Message Timeout Frequency,SECS message timeout frequency exceeded (too many timeouts)
+WaferSensorMalfunction,Error,Wafer Sensor Malfunction,MaterialLocation wafer sensor not responding or responding intermiittently
+WaferLostDuringProcess,Error,Wafer Lost During Process,Wafer unexpectedly disappeared from MaterialLocation during processing
+InitializationFailed,Error,Initialization Failed,Equipment component failed to initialize properly
+SpinSpeedOutOfLimits,Error,Spin Speed Out Of Limits,Spin speed beyond normal limits
+AccessModeViolation,Warning,Access Mode Violation,"A carrier was manually placed on the load port while in Auto, or the AMHS placed a carrier while in Manual"
+CarrierVerificationFailure,Error,Carrier Verification Failure,Equipment verification of Carrier Id failed
+SlotMapReadFailed,Error,Slot Map Read Failed,Failed to read slot map
+SlotMapVerificationFailed,Error,Slot Map Verification Failed,Equipment verification of Carrier Slot Map failed
+DuplicateCarrierID,Error,Duplicate Carrier ID,A duplicate Carrier ID exists on the equipment
+CarrierOpenCloseFailure,Error,Carrier Open Close Failure,Failed to open or close the Load Port / Carrier door
+PIOFailure,Error,PIO Failure,I/O signal error occurred
+AttemptToUseOutOfServiceLoadPort,Error,Attempt To Use Out Of Service Load Port,An attempt was made to use a load port that is in the OutOfService state
+CarrierPresenceError,Error,Carrier Presence Error,Carrier sensor indicates a carrier is present when none should be
+CarrierPlacementError,Error,Carrier Placement Error,Carrier placement on port is incorrect
+CarrierDockUndockFailure,Error,Carrier Dock / Undock Failure,Failed to dock or undock carrier
+CarrierRemovalError,Error,Carrier Removal Error,Carrier was removed in an invalid state
+SubstrateDestinationNotAccessible,Error,Substrate Destination Not Accessible,The substrate destination in the MtrlOutSpec is either not accessible or is already occupied
+SubstrateDestinationUnknown,Error,Substrate Destination Unknown,The substrate destination is not specified in the MtrlOutSpec
+DeviceNotResponding_0,Error,Device Not Responding,Communication with device lost
+DeviceNotResponding_1,Error,Device Not Responding,Communication with device lost
+DeviceNotResponding_2,Error,Device Not Responding,Communication with device lost
+DeviceNotResponding_3,Error,Device Not Responding,Communication with device lost
+DeviceNotResponding_4,Error,Device Not Responding,Communication with device lost
+DeviceNotResponding_5,Error,Device Not Responding,Communication with device lost
+WaferSensorMalfunction_0,Error,Wafer Sensor Malfunction,MaterialLocation wafer sensor not responding or responding intermiittently
+WaferLostDuringProcess_0,Error,Wafer Lost During Process,Wafer unexpectedly disappeared from MaterialLocation during processing
+InitializationFailed_0,Error,Initialization Failed,Equipment component failed to initialize properly
+VacuumLoss_0,Error,Vacuum Loss,Vacuum lost
+PIOFailure_0,Error,PIO Failure,I/O signal error occurred
+AttemptToUseOutOfServiceLoadPort_0,Error,Attempt To Use Out Of Service Load Port,An attempt was made to use a load port that is in the OutOfService state
+CarrierPresenceError_0,Error,Carrier Presence Error,Carrier sensor indicates a carrier is present when none should be
+CarrierPlacementError_0,Error,Carrier Placement Error,Carrier placement on port is incorrect
+CarrierDockUndockFailure_0,Error,Carrier Dock / Undock Failure,Failed to dock or undock carrier
+CarrierRemovalError_0,Error,Carrier Removal Error,Carrier was removed in an invalid state
+AccessModeViolation_0,Warning,Access Mode Violation,"A carrier was manually placed on the load port while in Auto, or the AMHS placed a carrier while in Manual"
+CarrierOpenCloseFailure_0,Error,Carrier Open Close Failure,Failed to open or close the Load Port / Carrier door
+VacuumLoss_1,Error,Vacuum Loss,Vacuum lost
