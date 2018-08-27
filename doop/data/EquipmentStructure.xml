@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Body xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2001/06/soap-envelope">
+    <GetEquipmentStructureResponse xmlns="urn:semi-org:xsd.E125.V0710.esd">
+        <Equipment xmlns="urn:semi-org:xsd.E120-1.V0310.CommonEquipmentModel">
+            <Name>TrackSys404</Name>
+            <Description>Exhaust-less Spin Coat and Bake tool</Description>
+            <Uid>b4fb6055-659e-45bd-bdd0-b279ab56132f</Uid>
+            <LogicalElements>
+                <LogicalElement>
+                    <Name>EPTTracker</Name>
+                    <Description>Non-structural element representing the EPTTracker for Equipment</Description>
+                    <Uid>929d3498-5bea-4dd1-9393-bbb3299a11eb</Uid>
+                    <ElementType>EPTTracker</ElementType>
+                </LogicalElement>
+                <LogicalElement>
+                    <Name>JobManager</Name>
+                    <Description>Non-structural element responsible for reporting all information related to jobs within the tool</Description>
+                    <Uid>87510bba-c098-4b24-b4f7-f2dfe99679c7</Uid>
+                    <ElementType>JobManager</ElementType>
+                </LogicalElement>
+                <LogicalElement>
+                    <Name>MaterialManager</Name>
+                    <Description>Non-structural element responsible for reporting all information related to material within the tool</Description>
+                    <Uid>c04fe2e7-ce21-4626-80c2-359b89d2d1f6</Uid>
+                    <ElementType>MaterialManager</ElementType>
+                </LogicalElement>
+                <LogicalElement>
+                    <Name>TSClock</Name>
+                    <Description>Non-structural element that represents the TS-Clock</Description>
+                    <Uid>8831a099-8fb5-4b41-a3bb-64d54350a802</Uid>
+                    <ElementType>TS-Clock</ElementType>
+                </LogicalElement>
+            </LogicalElements>
+            <ElementType>Process</ElementType>
+            <Supplier>TrackSys, Inc.</Supplier>
+            <Make>TrackSys</Make>
+            <Model>TrackSys404</Model>
+            <ModelRevision>0.1</ModelRevision>
+            <Function>Coat and Bake</Function>
+            <ImmutableID>TrackSys404-01</ImmutableID>
+            <SoftwareModules>
+                <SoftwareModule>
+                    <Name>TrackSys404</Name>
+                    <Supplier>TrackSys, Inc.</Supplier>
+                    <Description>TrackSys404 equipment control system</Description>
+                    <Version>3.7</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>TrackSys404 Host Interface</Name>
+                    <Supplier>TrackSys, Inc.</Supplier>
+                    <Description>TrackSys host communication interface system</Description>
+                    <Version>4.4</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E5</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>SEMI Equipment Communications Standard 2 Message Content</Description>
+                    <Version>0709</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E30</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Generic Model for Communication and Control of Manufacturing Equipment</Description>
+                    <Version>0307</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E37</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>High Speed Message Services</Description>
+                    <Version>0303</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E40</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Processing Management</Description>
+                    <Version>0709</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E84</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Enhanced Carrier Handoff Parallel I/O Interface</Description>
+                    <Version>1109</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E87</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Carrier Management</Description>
+                    <Version>0709</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E90</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Substrate Tracking</Description>
+                    <Version>0707</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E94</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Control Job Management</Description>
+                    <Version>0309</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E116</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Equipment Performance Tracking</Description>
+                    <Version>0707</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E120</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Common Equipment Model</Description>
+                    <Version>0310</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E125</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Equipment Self-Description</Description>
+                    <Version>0710</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E132</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Equipment Client Authentication and Authorization</Description>
+                    <Version>0310</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E134</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Data Collection Management</Description>
+                    <Version>0710</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E148</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Time Synchronization and Definition of the TS-Clock Object</Description>
+                    <Version>1109</Version>
+                </SoftwareModule>
+                <SoftwareModule>
+                    <Name>E157</Name>
+                    <Supplier>SEMI</Supplier>
+                    <Description>Module Process Tracking</Description>
+                    <Version>0710</Version>
+                </SoftwareModule>
+            </SoftwareModules>
+            <EquipmentComponents>
+                <Subsystems>
+                    <Subsystem>
+                        <Name>TransArm300</Name>
+                        <Description>TransArm300 wafer transfer robot</Description>
+                        <Uid>a2b033ea-86c7-4afc-a729-b0448bc166e9</Uid>
+                        <ElementType>Substrate Handler</ElementType>
+                        <Supplier>RoboTrans, Inc.</Supplier>
+                        <Make>TransArm</Make>
+                        <Model>TransArm-300</Model>
+                        <ModelRevision>0.1</ModelRevision>
+                        <Function>Wafer transfer</Function>
+                        <ImmutableID>TransArm300-01</ImmutableID>
+                        <SoftwareModules>
+                            <SoftwareModule>
+                                <Name>TransArm-300</Name>
+                                <Supplier>RoboTrans, Inc.</Supplier>
+                                <Description>TransferArm robot control system</Description>
+                                <Version>2.3</Version>
+                            </SoftwareModule>
+                        </SoftwareModules>
+                        <SubsystemComponents>
+                            <MaterialLocations>
+                                <MaterialLocation>
+                                    <Name>TransArm300VacuumChuck</Name>
+                                    <Description>Wafer transfer vacuum chuck</Description>
+                                    <Uid>04d244c2-3c8d-4856-9ca9-ab00a256440d</Uid>
+                                    <MaterialType>Substrate</MaterialType>
+                                    <MaterialSubtype>300mm Wafer</MaterialSubtype>
+                                </MaterialLocation>
+                            </MaterialLocations>
+                            <Subsystems>
+                                <Subsystem>
+                                    <Name>TransMC300</Name>
+                                    <Description>TransMC-300 multi-axis stepper/motor motion controller system</Description>
+                                    <Uid>ebcf7f47-8f1b-4301-b1e5-b6ebc1b18f72</Uid>
+                                    <ElementType>Control</ElementType>
+                                    <Supplier>RoboTrans, Inc.</Supplier>
+                                    <Make>TransMC</Make>
+                                    <Model>TransMC-300</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Motion Control</Function>
+                                    <ImmutableID>TransMC-300-01</ImmutableID>
+                                </Subsystem>
+                            </Subsystems>
+                        </SubsystemComponents>
+                    </Subsystem>
+                    <Subsystem>
+                        <Name>VacuSys8000</Name>
+                        <Description>VacuSys8000 air vacuum pump for wafer hold-down or pneumatic controls across for all equipment components</Description>
+                        <Uid>4db5752e-a5e9-46b9-a29e-e02b7554a83b</Uid>
+                        <ElementType>Vacuum</ElementType>
+                        <Supplier>VacuSys, Inc.</Supplier>
+                        <Make>VacuSys</Make>
+                        <Model>VacuSys8000</Model>
+                        <ModelRevision>1.0</ModelRevision>
+                        <Function>Vacuum pump</Function>
+                        <ImmutableID>VC-58032</ImmutableID>
+                    </Subsystem>
+                    <Subsystem>
+                        <Name>EFEM</Name>
+                        <Description>Equipment front end module</Description>
+                        <Uid>5b5d4fc6-368a-49f5-85ed-4c97d4b8fa49</Uid>
+                        <ElementType>EFEM</ElementType>
+                        <Supplier>Integrated Systems</Supplier>
+                        <Make>IS-Fixed</Make>
+                        <Model>ISFB-8000</Model>
+                        <ModelRevision>1.3</ModelRevision>
+                        <Function>Equipment front end module</Function>
+                        <ImmutableID>IS45453</ImmutableID>
+                        <SubsystemComponents>
+                            <Subsystems>
+                                <Subsystem>
+                                    <Name>LoadPort1</Name>
+                                    <Description>Carrier FOUP Load Port 1</Description>
+                                    <Uid>9434cd08-039e-4904-9342-a1d07d0c0e3d</Uid>
+                                    <LogicalElements>
+                                        <LogicalElement>
+                                            <Name>EPTTracker</Name>
+                                            <Description>Non-structural element representing the EPTTracker for a Module or LoadPort</Description>
+                                            <Uid>e3df0d28-33a8-4c9e-9edc-ebf8596cb3be</Uid>
+                                            <ElementType>EPTTracker</ElementType>
+                                        </LogicalElement>
+                                    </LogicalElements>
+                                    <ElementType>Load Port</ElementType>
+                                    <Supplier>FOUPTronics</Supplier>
+                                    <Make>FOUPTronics</Make>
+                                    <Model>TRFL-2002</Model>
+                                    <ModelRevision>v1.2</ModelRevision>
+                                    <Function>Load/Unload material from the tool</Function>
+                                    <ImmutableID>4593420</ImmutableID>
+                                    <SubsystemComponents>
+                                        <MaterialLocations>
+                                            <MaterialLocation>
+                                                <Name>LoadPort1Load</Name>
+                                                <Description>Load Port Load/Unload Location - place where a Carrier is delivered and picked up</Description>
+                                                <Uid>a31a9ff8-5b4c-45a9-af3c-aacd74e31d3c</Uid>
+                                                <MaterialType>Carrier</MaterialType>
+                                                <MaterialSubtype>300mmFOUP</MaterialSubtype>
+                                            </MaterialLocation>
+                                            <MaterialLocation>
+                                                <Name>LoadPort1FIMS</Name>
+                                                <Description>Load Port FIMS Location - place where Carrier is docked and can be opened</Description>
+                                                <Uid>214405c4-81fd-4dc1-8964-cc356521e634</Uid>
+                                                <MaterialType>Carrier</MaterialType>
+                                                <MaterialSubtype>300mmFOUP</MaterialSubtype>
+                                            </MaterialLocation>
+                                        </MaterialLocations>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                                <Subsystem>
+                                    <Name>LoadPort2</Name>
+                                    <Description>Carrier FOUP Load Port 2</Description>
+                                    <Uid>8809b63f-4fed-4763-aed4-8980a4baee72</Uid>
+                                    <LogicalElements>
+                                        <LogicalElement>
+                                            <Name>EPTTracker</Name>
+                                            <Description>Non-structural element representing the EPTTracker for a Module or LoadPort</Description>
+                                            <Uid>e8046929-bce3-4818-aed8-934498e589d8</Uid>
+                                            <ElementType>EPTTracker</ElementType>
+                                        </LogicalElement>
+                                    </LogicalElements>
+                                    <ElementType>Load Port</ElementType>
+                                    <Supplier>FOUPTronics</Supplier>
+                                    <Make>FOUPTronics</Make>
+                                    <Model>TRFL-2002</Model>
+                                    <ModelRevision>v1.2</ModelRevision>
+                                    <Function>Load/Unload material from the tool</Function>
+                                    <ImmutableID>4593421</ImmutableID>
+                                    <SubsystemComponents>
+                                        <MaterialLocations>
+                                            <MaterialLocation>
+                                                <Name>LoadPort2Load</Name>
+                                                <Description>Load Port Load/Unload Location - place where a Carrier is delivered and picked up</Description>
+                                                <Uid>c2577ac9-5404-4e9a-b47c-9c4db607a1ce</Uid>
+                                                <MaterialType>Carrier</MaterialType>
+                                                <MaterialSubtype>300mmFOUP</MaterialSubtype>
+                                            </MaterialLocation>
+                                            <MaterialLocation>
+                                                <Name>LoadPort2FIMS</Name>
+                                                <Description>Load Port FIMS Location - place where Carrier is docked and can be opened</Description>
+                                                <Uid>b5c58110-c27f-45b3-83ae-949ef762d063</Uid>
+                                                <MaterialType>Carrier</MaterialType>
+                                                <MaterialSubtype>300mmFOUP</MaterialSubtype>
+                                            </MaterialLocation>
+                                        </MaterialLocations>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                                <Subsystem>
+                                    <Name>SubstrateReader</Name>
+                                    <Description>Device for reading substrate identifiers</Description>
+                                    <Uid>dbab65d1-34be-48c4-b10c-8c8743036202</Uid>
+                                    <ElementType>SubstrateReader</ElementType>
+                                    <Supplier>RdrTronics</Supplier>
+                                    <Make>RdrTronics</Make>
+                                    <Model>SubstRdr508</Model>
+                                    <ModelRevision>v3.5</ModelRevision>
+                                    <Function>Read Substrate Identifiers</Function>
+                                    <ImmutableID>5504921001</ImmutableID>
+                                    <SubsystemComponents>
+                                        <MaterialLocations>
+                                            <MaterialLocation>
+                                                <Name>SubstrateReaderChuck</Name>
+                                                <Description>Location for the substrate while ID is being read</Description>
+                                                <Uid>d6b575f1-4f2a-4470-af56-758e9caeaf05</Uid>
+                                                <MaterialType>Substrate</MaterialType>
+                                                <MaterialSubtype>300mm Wafer</MaterialSubtype>
+                                            </MaterialLocation>
+                                        </MaterialLocations>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                                <Subsystem>
+                                    <Name>TransArm300</Name>
+                                    <Description>TransArm300 wafer transfer robot</Description>
+                                    <Uid>293f801a-fe76-4ad8-8898-1881adf5c1d7</Uid>
+                                    <ElementType>Substrate Handler</ElementType>
+                                    <Supplier>RoboTrans, Inc.</Supplier>
+                                    <Make>TransArm</Make>
+                                    <Model>TransArm-300</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Wafer transfer</Function>
+                                    <ImmutableID>TransArm300-01</ImmutableID>
+                                    <SoftwareModules>
+                                        <SoftwareModule>
+                                            <Name>TransArm300</Name>
+                                            <Supplier>RoboTrans, Inc.</Supplier>
+                                            <Description>TransferArm robot control system</Description>
+                                            <Version>2.3</Version>
+                                        </SoftwareModule>
+                                    </SoftwareModules>
+                                    <SubsystemComponents>
+                                        <MaterialLocations>
+                                            <MaterialLocation>
+                                                <Name>TransArm300VacuumChuck</Name>
+                                                <Description>Wafer transfer vacuum chuck</Description>
+                                                <Uid>04d244c2-3c8d-4856-9ca9-ab00a256440e</Uid>
+                                                <MaterialType>Substrate</MaterialType>
+                                                <MaterialSubtype>300mm Wafer</MaterialSubtype>
+                                            </MaterialLocation>
+                                        </MaterialLocations>
+                                        <Subsystems>
+                                            <Subsystem>
+                                                <Name>TransMC300</Name>
+                                                <Description>TransMC-300 multi-axis stepper/motor motion controller system</Description>
+                                                <Uid>ebcf7f47-8f1b-4301-b1e5-b6ebc1b18f73</Uid>
+                                                <ElementType>Control</ElementType>
+                                                <Supplier>RoboTrans, Inc.</Supplier>
+                                                <Make>TransMC</Make>
+                                                <Model>TransMC-300</Model>
+                                                <ModelRevision>0.1</ModelRevision>
+                                                <Function>Motion Control</Function>
+                                                <ImmutableID>TransMC-300-01</ImmutableID>
+                                            </Subsystem>
+                                        </Subsystems>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                            </Subsystems>
+                        </SubsystemComponents>
+                    </Subsystem>
+                </Subsystems>
+                <Modules>
+                    <Module>
+                        <Name>HotPlate</Name>
+                        <Description>Hot plate for heating wafer and coatings</Description>
+                        <Uid>f55bce7a-aabc-45dc-8fb0-a1475d227004</Uid>
+                        <LogicalElements>
+                            <LogicalElement>
+                                <Name>EPTTracker</Name>
+                                <Description>Non-structural element representing the EPTTracker for a Module or LoadPort</Description>
+                                <Uid>8493397d-d2bd-44fb-ab58-d1f906bd4aee</Uid>
+                                <ElementType>EPTTracker</ElementType>
+                            </LogicalElement>
+                        </LogicalElements>
+                        <ElementType>Process Area</ElementType>
+                        <Supplier>TrackSys, Inc.</Supplier>
+                        <Make>HotPlate</Make>
+                        <Model>HotPlateA</Model>
+                        <ModelRevision>0.1</ModelRevision>
+                        <Function>Bake</Function>
+                        <ImmutableID>TrackSys-HotPlate-01</ImmutableID>
+                        <SoftwareModules>
+                            <SoftwareModule>
+                                <Name>HotPlate</Name>
+                                <Supplier>TrackSys, Inc.</Supplier>
+                                <Description>Hot plate control system</Description>
+                                <Version>3.2</Version>
+                            </SoftwareModule>
+                        </SoftwareModules>
+                        <ModuleComponents>
+                            <MaterialLocations>
+                                <MaterialLocation>
+                                    <Name>HotChuck</Name>
+                                    <Description>NuTrack hot chuck for wafer being baked</Description>
+                                    <Uid>3d6bb5ff-e733-4c2e-bf5a-45485d3f6f58</Uid>
+                                    <MaterialType>Substrate</MaterialType>
+                                    <MaterialSubtype>300mm Wafer</MaterialSubtype>
+                                </MaterialLocation>
+                            </MaterialLocations>
+                            <IODevices>
+                                <IODevice>
+                                    <Name>MFC300</Name>
+                                    <Description>Mass Flow Controller controlling nitrogen flow rate within hot plate</Description>
+                                    <Uid>d4f424e9-9e99-4612-a09e-8120db6f4f21</Uid>
+                                    <ElementType>Mass Flow Control</ElementType>
+                                    <Supplier>DigiMass</Supplier>
+                                    <Make>MFC</Make>
+                                    <Model>MFC300</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Mass Flow Control</Function>
+                                    <ImmutableID>MFC300-01</ImmutableID>
+                                </IODevice>
+                                <IODevice>
+                                    <Name>TC300</Name>
+                                    <Description>Temperature Controller for hot plate</Description>
+                                    <Uid>3d3b9df2-f9a9-4a6e-82f6-64f6bbf80b42</Uid>
+                                    <ElementType>Temperature Control</ElementType>
+                                    <Supplier>TCSystems, Inc</Supplier>
+                                    <Make>TC</Make>
+                                    <Model>TC300</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Temperature Control</Function>
+                                    <ImmutableID>TC300-01</ImmutableID>
+                                </IODevice>
+                                <IODevice>
+                                    <Name>UpstreamValve</Name>
+                                    <Description>Upstream Valve and Controller for nitrogen gas</Description>
+                                    <Uid>cb890d8f-a88d-4a76-a36e-a46590239deb</Uid>
+                                    <ElementType>Valve</ElementType>
+                                    <Supplier>DigiMass</Supplier>
+                                    <Make>DMV</Make>
+                                    <Model>DMV3630</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Valve</Function>
+                                    <ImmutableID>DMV3630-01</ImmutableID>
+                                </IODevice>
+                                <IODevice>
+                                    <Name>DownstreamValve</Name>
+                                    <Description>Downstream Valve and Controller for nitrogen gas</Description>
+                                    <Uid>8622a057-b3e8-456a-9a06-9dccd5d668cc</Uid>
+                                    <ElementType>Valve</ElementType>
+                                    <Supplier>DigiMass</Supplier>
+                                    <Make>DMV</Make>
+                                    <Model>DMV3630</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Valve</Function>
+                                    <ImmutableID>DMV3630-01</ImmutableID>
+                                </IODevice>
+                            </IODevices>
+                        </ModuleComponents>
+                    </Module>
+                    <Module>
+                        <Name>Coater</Name>
+                        <Description>Spin coater for coating wafers</Description>
+                        <Uid>97c1f25f-b994-4ea0-91b8-e88baa96638d</Uid>
+                        <LogicalElements>
+                            <LogicalElement>
+                                <Name>EPTTracker</Name>
+                                <Description>Non-structural element representing the EPTTracker for a Module or LoadPort</Description>
+                                <Uid>2e42c03c-70a6-4587-b2a9-043201d4427f</Uid>
+                                <ElementType>EPTTracker</ElementType>
+                            </LogicalElement>
+                        </LogicalElements>
+                        <ElementType>Process Area</ElementType>
+                        <Supplier>TracSys, Inc.</Supplier>
+                        <Make>Coater</Make>
+                        <Model>CoaterA</Model>
+                        <ModelRevision>0.1</ModelRevision>
+                        <Function>SpinCoat</Function>
+                        <ImmutableID>TrackSys-Coater-01</ImmutableID>
+                        <SoftwareModules>
+                            <SoftwareModule>
+                                <Name>Coater</Name>
+                                <Supplier>TracSys, Inc.</Supplier>
+                                <Description>Coater module control system</Description>
+                                <Version>4.1</Version>
+                            </SoftwareModule>
+                        </SoftwareModules>
+                        <ModuleComponents>
+                            <Subsystems>
+                                <Subsystem>
+                                    <Name>NuDispense</Name>
+                                    <Description>Arm for dispensing coating fluids</Description>
+                                    <Uid>6987424b-4397-4c8a-9f44-cce7fbb9620b</Uid>
+                                    <ElementType>Dispense Arm</ElementType>
+                                    <Supplier>TrackSys, Inc.</Supplier>
+                                    <Make>TSDispense</Make>
+                                    <Model>TSDispenseA</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Dispense Arm</Function>
+                                    <ImmutableID>TSDispense-01</ImmutableID>
+                                    <SubsystemComponents>
+                                        <IODevices>
+                                            <IODevice>
+                                                <Name>NuTemperature</Name>
+                                                <Description>Temperature controller for the dispense fluid</Description>
+                                                <Uid>b1698072-77ff-4346-ab1f-34ada0815611</Uid>
+                                                <ElementType>Control</ElementType>
+                                                <Supplier>DigiTemp</Supplier>
+                                                <Make>NuTemp</Make>
+                                                <Model>NuTemp55</Model>
+                                                <ModelRevision>1.0</ModelRevision>
+                                                <Function>Temperature Controller</Function>
+                                                <ImmutableID>NT556321</ImmutableID>
+                                            </IODevice>
+                                        </IODevices>
+                                        <Subsystems>
+                                            <Subsystem>
+                                                <Name>NuMC300</Name>
+                                                <Description>Dispense Arm Motion Controller</Description>
+                                                <Uid>97f32e0d-9630-43b9-9c8e-50a90b5e11e9</Uid>
+                                                <ElementType>Control</ElementType>
+                                                <Supplier>TrackSys, Inc.</Supplier>
+                                                <Make>NuMC</Make>
+                                                <Model>300</Model>
+                                                <ModelRevision>0.1</ModelRevision>
+                                                <Function>Dispense Control</Function>
+                                                <ImmutableID>NuMC300-01</ImmutableID>
+                                            </Subsystem>
+                                        </Subsystems>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                                <Subsystem>
+                                    <Name>Photopump300</Name>
+                                    <Description>Pump for coating fluids</Description>
+                                    <Uid>cee8e945-dd5e-45ba-9769-f26ac441c41e</Uid>
+                                    <ElementType>Pump</ElementType>
+                                    <Supplier>PumpTronics, Inc</Supplier>
+                                    <Make>Photopump</Make>
+                                    <Model>Photopump300</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Pump</Function>
+                                    <ImmutableID>Photopump300-01</ImmutableID>
+                                </Subsystem>
+                                <Subsystem>
+                                    <Name>NuSpin</Name>
+                                    <Description>Spin system for spinning wafer during coat</Description>
+                                    <Uid>d71a3c9c-f2de-44c1-a826-991bbe515448</Uid>
+                                    <ElementType>Spin</ElementType>
+                                    <Supplier>TrackSys, Inc.</Supplier>
+                                    <Make>TSSpin</Make>
+                                    <Model>TSSpinA</Model>
+                                    <ModelRevision>0.1</ModelRevision>
+                                    <Function>Spin</Function>
+                                    <ImmutableID>TSSpin-01</ImmutableID>
+                                    <SubsystemComponents>
+                                        <MaterialLocations>
+                                            <MaterialLocation>
+                                                <Name>NuSpinVacuumChuck</Name>
+                                                <Description>Wafer transfer vacuum chuck</Description>
+                                                <Uid>74d1535b-a7b8-4f64-84bb-5c9acd3c9ffa</Uid>
+                                                <MaterialType>Substrate</MaterialType>
+                                                <MaterialSubtype>300mm Wafer</MaterialSubtype>
+                                            </MaterialLocation>
+                                        </MaterialLocations>
+                                        <Subsystems>
+                                            <Subsystem>
+                                                <Name>NuMC303</Name>
+                                                <Description>Spin Motion Controller for spin motor</Description>
+                                                <Uid>4c3070db-874c-4c9f-8c70-83fcae5096a7</Uid>
+                                                <ElementType>Control</ElementType>
+                                                <Supplier>TrackSys, Inc.</Supplier>
+                                                <Make>NuMC</Make>
+                                                <Model>303</Model>
+                                                <ModelRevision>0.1</ModelRevision>
+                                                <Function>Spin Control</Function>
+                                                <ImmutableID>NuMC303-01</ImmutableID>
+                                            </Subsystem>
+                                        </Subsystems>
+                                    </SubsystemComponents>
+                                </Subsystem>
+                            </Subsystems>
+                        </ModuleComponents>
+                    </Module>
+                </Modules>
+            </EquipmentComponents>
+        </Equipment>
+    </GetEquipmentStructureResponse>
+</Body>
